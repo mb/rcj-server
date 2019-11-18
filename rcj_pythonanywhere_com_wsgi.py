@@ -30,96 +30,16 @@ def application(environ, start_response):
     args = environ.get('QUERY_STRING')
     postargs = environ['wsgi.input'].read().decode()
 
-    # redirect to HTTPS
-    isHTTPS = environ.get('HTTPS')
-    if(False):#isHTTPS == None or isHTTPS.lower() != 'on'):
-        httpsURL = "https://" + str(host) + str(path)
-        if(args != None and args != ""): httpsURL += '?'+str(args)
-
-        status = '200 OK'
-        content = '<html><header><meta http-equiv="refresh" content="0; url=' + httpsURL
-        content+= '"/></header><body><p>Redirect to HTTPS</p><p><a href="' + httpsURL + '">' + httpsURL + '</a></p></body></html>'
-
-        response_headers = [('Content-Type', 'text/html'),
-                            ('Content-Length', str(len(content)))]
-
-        start_response(status, response_headers)
-        yield content.encode('utf8')
-
     if path == '/' or True:
         status = '200 OK'
-        content = "Hello, World!"
+        content = "Hello, World!\n"
         f = open("testfile.txt","a")
         f.write(path + " " + args + "\n")
-        f.close()
-    elif path == '/survey':
-        status = '200 OK'
-        content = HTML_HEADER.format(title="Test") + """
-        <form action="/sendsurvey" method="post">
-            <p>In welchem Wettbewerb wirst du teilnehmen?</p>
-            <label><input type="radio" name="league" value="line"> Rescue Line</label> <br>
-            <label><input type="radio" name="league" value="entry"> Rescue Line Entry</label>
-
-            <p>Hast du bereits im letzten Jahr beim RCJ Qualifikationsturnier in Berlin teilgenommen?</p>
-            <label><input type="radio" name="participation2019" value="yes" onchange="onchange2019()"> Ja</label> <br>
-            <label><input type="radio" name="participation2019" value="no" onchange="onchange2019()"> Nein</label>
-
-        <script>
-        function onchange2019 () {
-            let radios = document.getElementsByName('participation2019');
-            for (var i=0; i<radios.length; i++) {
-                if (radios[i].checked) {
-                    document.getElementById("block-last-year").style.display = (radios[i].value == "yes") ? "" : "none";
-                    break;
-                }
-            }
-        }
-        </script>
-
-        <span id="block-last-year">
-            <p>Wie zufrieden warst du im letzten Jahr (2019)?</p>
-            <table border="1" cellspacing="0">
-            <tr><td></td><td>--</td><td>-</td><td>0</td><td>+</td><td>++</td></tr>
-            </table>
-        </span>
-            <!--Kommentar-->
-
-            <p>Wenn du möchtest, kannst du noch ein paar weitere freiwillige Angaben machen.</p>
-            <label for="teamname">Teamname: </label>
-            <input type="text" name="teamname"> <br>
-
-            <label for="age">Alter: </label>
-            <input type="number" name="age" min="0" max="19" value="0"> <br>
-
-            <label for="grade">Klassenstufe: </label>
-            <input type="number" name="grade" min="1" max="13" value="1"> <br>
-
-
-            <!-- Anzahl Teilnahmen, letztes Jahr Berlin?, Teamname, Alter, Klassenstufe, Region, Zeitaufwand, Regeln gelesen/vertraut - Englisch? kompliziert umfangreich
-            Zufriedenheit 2019 (orga, schiris, live ergebnisse samstag)
-            schwierigkeit der parcours insgesamt zu leicht / schwer; einzelne Platten leicht / schwer
-            Reihenfolge Teams (Zufall, Schule am stück, möglichst weit auseinander)
-            Anzahl Läufe
-            Streichlauf
-            Zeitplan (13-18Uhr)
-            Ergebnisse bereits vor der Siegerehrung bekannt geben (live, wie samstag)
-            Showläufe
-            sonstige ideen anregung kritik
-            -->
-
-            <input type="submit" value="Umfrage abschicken!">
-        </form>
-        """ + HTML_FOOTER
-    elif path == '/sendsurvey':
-        status = '200 OK'
-        content = HTML_HEADER.format(title="Danke!") + "<p>Vielen Dank für die Teilnahme an der Umfrage! Bis zum RoboCup im März!</p>" + HTML_FOOTER
-        f = open("surveyresults.txt", "a")
-        f.write(time.strftime("%Y-%m-%d %T") + " " + postargs + "\n")
         f.close()
     else:
         status = '404 NOT FOUND'
         content = 'Page not found.'
-    response_headers = [('Content-Type', 'text/html'), ('Content-Length', str(len(content)))]
+    response_headers = [('Content-Type', 'text/html'), ('Content-Length', str(len(content))), ('Access-Control-Allow-Origin', '*')]
     start_response(status, response_headers)
     yield content.encode('utf8')
 

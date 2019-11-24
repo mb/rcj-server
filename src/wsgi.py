@@ -13,22 +13,33 @@ HTML_HEADER = """<!DOCTYPE html>
 HTML_FOOTER = """</body>
 </html>"""
 
+import os
+import sys
+
 def application(environ, start_response):
     host = environ.get('SERVER_NAME')
     path = environ.get('PATH_INFO')
     args = environ.get('QUERY_STRING')
     postargs = environ['wsgi.input'].read().decode()
+    status = ''
+    content = ''
 
-    if path == '/' or True:
+    if path == '/':
         status = '200 OK'
         content = "Hello, World!<br>\n"
         content += "Test page\n"
-        f = open("testfile.txt","a")
-        f.write(host + " " + path + " " + args + "\n")
-        f.close()
+        #f = open("testfile.txt","a")
+        #f.write(host + " " + path + " " + args + "\n")
+        #f.close()
+    elif path == "/info":
+        status = '200 OK'
+        content = '<h1>Debug info</h1>\n'
+        content += 'argv: ' + str(sys.argv) + '<br>\n'
+        content += 'cwd: ' + os.getcwd() + '<br>\n'
     else:
         status = '404 NOT FOUND'
-        content = 'Page not found.'
+        content = path + 'Page not found.'
+
     response_headers = [('Content-Type', 'text/html'), ('Content-Length', str(len(content))), ('Access-Control-Allow-Origin', '*')]
     start_response(status, response_headers)
     yield content.encode('utf8')

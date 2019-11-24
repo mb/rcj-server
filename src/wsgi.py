@@ -16,6 +16,8 @@ HTML_FOOTER = """</body>
 import os
 import sys
 
+# https://palletsprojects.com/p/flask/
+
 def application(environ, start_response):
     host = environ.get('SERVER_NAME')
     path = environ.get('PATH_INFO')
@@ -28,9 +30,9 @@ def application(environ, start_response):
         status = '200 OK'
         content = "Hello, World!<br>\n"
         content += "Test page\n"
-        #f = open("testfile.txt","a")
-        #f.write(host + " " + path + " " + args + "\n")
-        #f.close()
+        f = open("/home/rcj/rcj-server/testfile.txt","a")
+        f.write(host + " " + path + " " + args + "\n")
+        f.close()
     elif path == "/info":
         status = '200 OK'
         content = '<h1>Debug info</h1>\n'

@@ -30,7 +30,7 @@ def application(environ, start_response):
         status = '200 OK'
         content = "Hello, World!<br>\n"
         content += "Test page\n"
-        f = open("/home/rcj/rcj-server/testfile.txt","a")
+        f = open("testfile.txt","a")
         f.write(host + " " + path + " " + args + "\n")
         f.close()
     elif path == "/info":

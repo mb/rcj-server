@@ -20,6 +20,9 @@
 # in your home directory under version control, then use something like this:
 #
 import sys
+import os
+
+os.chdir('/home/rcj/rcj-server')
 
 path = '/home/rcj/rcj-server/src'
 if path not in sys.path:

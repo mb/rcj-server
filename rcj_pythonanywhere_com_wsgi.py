@@ -6,6 +6,9 @@
 # The below has been auto-generated for your Flask project
 
 import sys
+import os
+
+os.chdir('/home/rcj/rcj-server')
 
 # add your project directory to the sys.path
 project_home = u'/home/rcj/rcj-server/src'

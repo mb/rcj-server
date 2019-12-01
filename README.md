@@ -2,13 +2,13 @@
 
 ## Setup
 
-This project currently runs on [PythonAnywhere](https://pythonanywhere.com)
+This project currently runs on [PythonAnywhere](https://pythonanywhere.com) with flask
 
 Test setup using apache2 on debian/ubuntu:
 
 ```bash
 sudo apt install apache2 libapache2-mod-wsgi-py3
-sudo a2enmod wsgi 
+sudo a2enmod wsgi
 ```
 
 ``/etc/apache2/envvars``:

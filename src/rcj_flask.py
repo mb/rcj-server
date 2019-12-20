@@ -2,7 +2,6 @@ from flask import Flask, request
 from flask import g # global variables
 from rcj import Rcj
 from flask_httpauth import HTTPBasicAuth
-from werkzeug.security import generate_password_hash, check_password_hash
 
 from configparser import ConfigParser
 
@@ -19,10 +18,7 @@ auth = HTTPBasicAuth()
 
 @auth.verify_password
 def verify_password(username, password):
-	pwhash = g.rcj.get_referee_pwhash(username)
-	if pwhash == None:
-		return
-	return check_password_hash(pwhash, password)
+	return g.rcj.check_referee_password(username, password)
 
 @login_manager.unauthorized_handler
 def unauthorized_handler():

@@ -4,3 +4,5 @@
 venv/
 rcj_config.ini
 rcj_database.sqlite
+*.db
+*.sqlite

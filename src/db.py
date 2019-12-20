@@ -26,13 +26,9 @@ class RcjDb:
 		c = self.db.cursor()
 		c.execute("PRAGMA encoding = 'UTF-8';" )
 
-		'''c.execute("""CREATE TABLE IF NOT EXISTS Referee(
-			username	VARCHAR(64)   PRIMARY KEY,
-			password	TEXT,
-		)""")'''
 		c.execute("""CREATE TABLE IF NOT EXISTS Referee(
 			username VARCHAR(64) PRIMARY KEY,
-			password TEXT
+			pwhash TEXT
 		);""")
 
 		c.execute("""CREATE TABLE IF NOT EXISTS Run(
@@ -69,10 +65,14 @@ class RcjDb:
 		pass
 	
 	def get_referees(self):
-		return self._query('SELECT * FROM referees')
+		return self._query_db('SELECT * FROM referee')
 	
 	def get_referee_pwhash(self, username):
-		return self._query('SELECT pwhash FROM referees WHERE username = ?', [username], one=True)
+		pwhash = self._query_db('SELECT pwhash FROM referee WHERE username = ?', [username], one=True)
+		# unwrap the resulting dictionary into the password hash string
+		if pwhash == None:
+			return
+		return pwhash['pwhash']
 	
 	def update_referee(self, username, pwhash):
 		"""
@@ -80,10 +80,10 @@ class RcjDb:
 		"""
 		c = self.db.cursor()
 		#https://stackoverflow.com/questions/15277373/
-		c.execute('''INSERT INTO referees (username, pwhash)
+		c.execute('''INSERT INTO referee (username, pwhash)
 			VALUES (?, ?)
 			ON CONFLICT(username)
 			DO UPDATE SET pwhash=excluded.pwhash;
-		''')
+		''', (username, pwhash))
 		self.db.commit()
 

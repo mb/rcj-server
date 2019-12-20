@@ -1,4 +1,5 @@
 from db import RcjDb
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class Rcj:
 	def _connect_db(self):
@@ -9,7 +10,7 @@ class Rcj:
 	
 	def _get_connection(self):
 		"""
-		connect to databe, if not already connected
+		connect to database, if not already connected
 		"""
 		db = getattr(self, '_db', None)
 		if db is None:
@@ -47,19 +48,27 @@ class Rcj:
 	def get_runs_round(self, team_name, round):
 		pass
 	
-	def get_referees(self, username):
+	def get_referees(self):
 		db = self._get_connection()
 		return db.get_referees()
 	
 	def is_referee(self, username):
 		return self.get_referee_pwhash(username) != None
 	
-	def get_referee_pwhash(self, username):
+	def check_referee_password(self, username, password):
 		db = self._get_connection()
-		return db.get_referee_pwhash(username)
+		pwhash = db.get_referee_pwhash(username)
+		if pwhash == None:
+			return False # user doen't exist
+		return check_password_hash(db.get_referee_pwhash(username), password)
 	
-	def add_referee(self, username, password):
+	def update_referee(self, username, password):
+		"""
+		adds referee overwrites if already exists
+		"""
 		# TODO: add explicit parameters
 		pwhash = generate_password_hash(password)
+		db = self._get_connection()
+		db.update_referee(username, pwhash)
 
 

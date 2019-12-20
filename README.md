@@ -15,7 +15,7 @@ git clone https://github.com/mb/rcj-server
 cd rcj-server
 python3 -m venv venv
 . venv/bin/activate
-pip install Flask
+pip install Flask flask-login
 ```
 
 Running the development version:
@@ -24,3 +24,14 @@ Running the development version:
 FLASK_APP=src/rcj_flask.py flask run
 ```
 
+## Configuring
+
+Example `rcj_config.ini`
+
+```ini
+[db]
+filename = "rcj_database.sqlite"
+
+[flask]
+secret_key = "`n!'XPma6m(X_xUZ:0,~qPsvj%;e'+_G"
+```

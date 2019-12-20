@@ -1,10 +1,29 @@
 from db import RcjDb
 
 class Rcj:
-	def __init__(self):
-		pass
+	def _connect_db(self):
+		"""
+		creates new database object
+		"""
+		return sqlite3.connect(self._database_name)
+	
+	def _get_connection(self):
+		"""
+		connect to databe, if not already connected
+		"""
+		db = getattr(self, '_db', None)
+		if db is None:
+			db = self._db = self._connect_db()
+		return db
 
-	def store_run(self, competition, team_name, round, arena, start_time, run_length, scoring, comments, complaints, confirmed, log):
+	def __init__(self, database):
+		self._database_name = database
+	
+	def __del__(self):
+		if hasattr(self, '_db'):
+			self._db.close()
+	
+	def store_run(self, competition, team_name, round, arena, start_time, run_length, scoring, comments, complaints, confirmed):
 		"""
 		Stores run in database overwrites existing runs from the same team on the same round
 		arguments:

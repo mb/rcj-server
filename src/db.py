@@ -74,8 +74,18 @@ class RcjDb:
 	def get_referee_pwhash(self, username):
 		return self._query('SELECT pwhash FROM referees WHERE username = ?', [username], one=True)
 	
-	def add_referee(self, username, pwhash):
-		pass
+	def update_referee(self, username, pwhash):
+		"""
+		update or insert referee
+		"""
+		c = self.db.cursor()
+		#https://stackoverflow.com/questions/15277373/
+		c.execute('INSERT INTO referees (username, pwhash)
+			VALUES (?, ?)
+			ON CONFLICT(username)
+			DO UPDATE SET pwhash=excluded.pwhash;
+		')
+		self.db.commit()
 
 
 

@@ -1,7 +1,8 @@
 from flask import Flask, request
 from flask import g # global variables
 from rcj import Rcj
-import flask_login
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
 
 from configparser import ConfigParser
 
@@ -14,40 +15,18 @@ app = Flask(__name__)
 app.secret_key = parser.get('flask', 'secret_key')
 
 # init the login manager
-login_manager = flask_login.LoginManager()
-login_manager.init_app(app)
+auth = HTTPBasicAuth()
 
-# user class for the login manager
-class Referee(flask_login.UserMixin):
-	pass
-
-# called when checking if a user exists
-@login_manager.user_loader
-def load_user(user_id):
-	if not g.rcj.is_referee(user_id):
+@auth.verify_password
+def verify_password(username, password):
+	pwhash = g.rcj.get_referee_pwhash(username)
+	if pwhash == None:
 		return
-	user = Referee()
-	user.id = user_id
-	return user
-
-@login_manager.request_loader
-def request_loader(request):
-	username = request.form.get("username")
-	# timing attack :/
-	if not g.rcj.is_referee(user_id):
-		return
-	user = Referee()
-	user.id = username
-	password = request.form.get("password")
-
-@app.route('/logout')
-def logout():
-	flask_login.logout_user()
-	return 'Logged out'
+	return check_password_hash(pwhash, password)
 
 @login_manager.unauthorized_handler
 def unauthorized_handler():
-    return 'Unauthorized'
+	return 'Unauthorized'
 
 # https://flask-doc.readthedocs.io/en/latest/patterns/sqlite3.html
 @app.before_request

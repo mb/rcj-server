@@ -15,7 +15,7 @@ git clone https://github.com/mb/rcj-server
 cd rcj-server
 python3 -m venv venv
 . venv/bin/activate
-pip install Flask flask-login
+pip install Flask Flask-HTTPAuth
 ```
 
 Running the development version:

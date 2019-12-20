@@ -45,4 +45,13 @@ class Rcj:
 	
 	def is_referee(self, username):
 		return True
+	
+	def get_referee_pwhash(self, username):
+		db = self._get_connection()
+		return db.get_referee_pwhash(username)
+	
+	def add_referee(self, username, password):
+		# TODO: add explicit parameters
+		pwhash = generate_password_hash(password)
+
 

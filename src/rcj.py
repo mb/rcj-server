@@ -42,4 +42,7 @@ class Rcj:
 	
 	def get_runs_round(self, team_name, round):
 		pass
+	
+	def is_referee(self, username):
+		return True
 

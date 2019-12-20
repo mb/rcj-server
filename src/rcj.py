@@ -5,7 +5,7 @@ class Rcj:
 		"""
 		creates new database object
 		"""
-		return sqlite3.connect(self._database_name)
+		return RcjDb(self._database_name)
 	
 	def _get_connection(self):
 		"""
@@ -21,7 +21,11 @@ class Rcj:
 	
 	def __del__(self):
 		if hasattr(self, '_db'):
-			self._db.close()
+			del self._db
+	
+	def create_database(self):
+		db = self._get_connection()
+		db.create_database()
 	
 	def store_run(self, competition, team_name, round, arena, start_time, run_length, scoring, comments, complaints, confirmed):
 		"""
@@ -43,8 +47,12 @@ class Rcj:
 	def get_runs_round(self, team_name, round):
 		pass
 	
+	def get_referees(self, username):
+		db = self._get_connection()
+		return db.get_referees()
+	
 	def is_referee(self, username):
-		return True
+		return self.get_referee_pwhash(username) != None
 	
 	def get_referee_pwhash(self, username):
 		db = self._get_connection()

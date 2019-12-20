@@ -3,10 +3,11 @@ import sqlite3
 class RcjDb:
 	def __init__(self, database):
 		# database: name of sqlite3 file
-		self.db = sqlite3.connect(self._database_name)
+		self.db = sqlite3.connect(database)
 	
 	def __del__(self):
-		self.db.close()
+		if hasattr(self, 'db'):
+			self.db.close()
 
 	def _query_db(self, query, args=(), one=False):
 		cur = self.db.execute(query, args)
@@ -23,29 +24,28 @@ class RcjDb:
 
 	def create_database(self):
 		c = self.db.cursor()
-		c.execute("'PRAGMA encoding = 'UTF-8';" )
+		c.execute("PRAGMA encoding = 'UTF-8';" )
 
-		c.execute("""CREATE TABLE IF NOT EXISTS Referee(
+		'''c.execute("""CREATE TABLE IF NOT EXISTS Referee(
 			username	VARCHAR(64)   PRIMARY KEY,
 			password	TEXT,
-		)""")
+		)""")'''
+		c.execute("""CREATE TABLE IF NOT EXISTS Referee(
+			username VARCHAR(64) PRIMARY KEY,
+			password TEXT
+		);""")
 
 		c.execute("""CREATE TABLE IF NOT EXISTS Run(
 			competition TEXT,
 			teamname TEXT,
 			round INTEGER,
 			arena TEXT,
-			referee 
-
-			time_duration FLOAT, --in seconds
-			timestamp_start INTEGER, --unix timestamp
-			timestamp_end INTEGER, --unix timestamp
-
-			scoring TEXT,  -- json object
-
-			PRIMARY KEY(competition, teamname, round),
-		)""")
-
+			time_duration REAL,
+			timestamp_start INTEGER,
+			timestamp_end INTEGER,
+			scoring TEXT,
+			PRIMARY KEY(competition, teamname, round)
+		);""")
 		self.db.commit()
 	
 	def store_run(self, competition, team_name, round, arena, start_time, run_length, scoring, comments, complaints, confirmed):
@@ -68,8 +68,8 @@ class RcjDb:
 	def get_runs_round(self, team_name, round):
 		pass
 	
-	def is_referee(self, username):
-		return self._query('SELECT pwhash FROM referees WHERE username = ?', [username], one=True) != None
+	def get_referees(self):
+		return self._query('SELECT * FROM referees')
 	
 	def get_referee_pwhash(self, username):
 		return self._query('SELECT pwhash FROM referees WHERE username = ?', [username], one=True)
@@ -80,12 +80,10 @@ class RcjDb:
 		"""
 		c = self.db.cursor()
 		#https://stackoverflow.com/questions/15277373/
-		c.execute('INSERT INTO referees (username, pwhash)
+		c.execute('''INSERT INTO referees (username, pwhash)
 			VALUES (?, ?)
 			ON CONFLICT(username)
 			DO UPDATE SET pwhash=excluded.pwhash;
-		')
+		''')
 		self.db.commit()
-
-
 

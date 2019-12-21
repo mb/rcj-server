@@ -22,26 +22,10 @@ class RcjDb:
 		else:
 			return rv
 
-	def create_database(self):
+	def create_database(self, schema_file):
 		c = self.db.cursor()
-		c.execute("PRAGMA encoding = 'UTF-8';" )
-
-		c.execute("""CREATE TABLE IF NOT EXISTS Referee(
-			username VARCHAR(64) PRIMARY KEY,
-			pwhash TEXT
-		);""")
-
-		c.execute("""CREATE TABLE IF NOT EXISTS Run(
-			competition TEXT,
-			teamname TEXT,
-			round INTEGER,
-			arena TEXT,
-			time_duration REAL,
-			timestamp_start INTEGER,
-			timestamp_end INTEGER,
-			scoring TEXT,
-			PRIMARY KEY(competition, teamname, round)
-		);""")
+		with open(schema_file) as f:
+			c.executescript(f.read())
 		self.db.commit()
 	
 	def store_run(self, competition, team_name, round, arena, start_time, run_length, scoring, comments, complaints, confirmed):

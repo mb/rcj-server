@@ -24,9 +24,9 @@ class Rcj:
 		if hasattr(self, '_db'):
 			del self._db
 	
-	def create_database(self):
+	def create_database(self, schema_file):
 		db = self._get_connection()
-		db.create_database()
+		db.create_database(schema_file)
 	
 	def store_run(self, competition, team_name, round, arena, start_time, run_length, scoring, comments, complaints, confirmed):
 		"""
@@ -53,14 +53,15 @@ class Rcj:
 		return db.get_referees()
 	
 	def is_referee(self, username):
-		return self.get_referee_pwhash(username) != None
+		db = self._get_connection()
+		return db.get_referee_pwhash(username) != None
 	
 	def check_referee_password(self, username, password):
 		db = self._get_connection()
 		pwhash = db.get_referee_pwhash(username)
 		if pwhash == None:
 			return False # user doen't exist
-		return check_password_hash(db.get_referee_pwhash(username), password)
+		return check_password_hash(pwhash, password)
 	
 	def update_referee(self, username, password):
 		"""

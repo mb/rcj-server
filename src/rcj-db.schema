@@ -1,0 +1,16 @@
+PRAGMA encoding = 'UTF-8';
+CREATE TABLE Referee(
+	username VARCHAR(64) PRIMARY KEY,
+	pwhash TEXT
+);
+CREATE TABLE Run(
+	competition TEXT,
+	teamname TEXT,
+	round INTEGER,
+	arena TEXT,
+	time_duration REAL, -- in seconds
+	timestamp_start INTEGER, -- unix time stamp
+	timestamp_end INTEGER, -- unix time stamp
+	scoring TEXT, -- json object with scoring information
+	PRIMARY KEY(competition, teamname, round)
+);

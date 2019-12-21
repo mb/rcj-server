@@ -6,10 +6,10 @@ from argparse import ArgumentParser
 
 # usage:
 # 
-# rcj_cli init # initialize the database:
+# rcj_cli init <schema> # initialize the database with the given schema file:
 # rcj_cli referee list # lists all referees
-# rcj_cli referee add username pass # adds referee to database
-# rcj_cli referee check username password # checks if referee has given password
+# rcj_cli referee add <username> <pass> # adds referee to database
+# rcj_cli referee check <username> <password> # checks if referee has given password
 #
 #    - show: print path and content
 # referee
@@ -21,6 +21,7 @@ def main(argv):
 	subparsers = parser.add_subparsers(help='COMMAND', dest='command')
 	# database init
 	init = subparsers.add_parser('init')
+	init.add_argument('schema')
 	# commands to handle referees
 	referee = subparsers.add_parser('referee')
 	sub_referee = referee.add_subparsers(help='ACTION', dest='ref_action', required=True)
@@ -36,7 +37,7 @@ def main(argv):
 
 	rcj = Rcj('database.sqlite')
 	if args.command == 'init':
-		rcj.create_database()
+		rcj.create_database(args.schema)
 	elif args.command == 'referee':
 		if args.ref_action == 'add':
 			rcj.update_referee(args.username, args.password)

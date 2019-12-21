@@ -28,7 +28,7 @@ class Rcj:
 		db = self._get_connection()
 		db.create_database(schema_file)
 	
-	def store_run(self, competition, team_name, round, arena, start_time, run_length, scoring, comments, complaints, confirmed):
+	def store_run(self, competition, team_name, round, arena, referee, time_duration, start_time, end_time, scoring, comments, complaints, confirmed):
 		"""
 		Stores run in database overwrites existing runs from the same team on the same round
 		arguments:
@@ -37,7 +37,8 @@ class Rcj:
 			* round: integer, together with competition and teamname the primary key
 			* arena: id, identifying the arena
 		"""
-		pass
+		db = self._get_connection()
+		db.store_run(competition, team_name, round, arena, referee, time_duration, start_time, end_time, scoring, comments, complaints, confirmed)
 
 	def get_runs(self, team_name):
 		pass

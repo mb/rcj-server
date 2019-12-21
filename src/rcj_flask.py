@@ -39,6 +39,7 @@ def root():
 	return 'Hello from Flask!'
 
 @app.route('/api/submit_run', methods=['PUT', 'POST'])
+@auth.login_required
 def submit_run():
 	if request.is_json:
 		return "json"

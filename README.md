@@ -52,20 +52,20 @@ Content-Type: application/json
 Content-Length: ...
 
 {
-    competition: "line",
-    arena: "A",
-    round: "2",
-    teamname: "pi++",
-    time: {
-        timeRun: 57.82108,
-        timestampRunStart: 1554854400,
-        timestampRunEnd: 1558665000
-    },
-    scoring: {
-    	...
-    },
-    comments: "",
-    confirmedByTeamCaptain: true,
-    complaints: ""
+	"competition": "line",
+	"arena": "A", 
+	"round": "2", 
+	"teamname": "pi++", 
+	"time": {     
+		"timeRun": 57.82108,
+		"timestampRunStart": 1554854400,
+		"timestampRunEnd": 1558665000
+	},
+	"scoring": {  
+		"teamStarted": true
+	},
+	"comments": "",
+	"confirmedByTeamCaptain": true,
+	"complaints": ""
 }
 ```

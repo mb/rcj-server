@@ -11,7 +11,6 @@ parser.read("rcj_config.ini")
 
 # setup flask
 app = Flask(__name__)
-app.secret_key = parser.get('flask', 'secret_key')
 
 # init the login manager
 auth = HTTPBasicAuth()

@@ -2,7 +2,6 @@
 *.pyc
 **/__pycache__/
 venv/
-rcj_config.ini
 rcj_database.sqlite
 *.db
 *.sqlite

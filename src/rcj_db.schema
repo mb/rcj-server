@@ -10,8 +10,8 @@ CREATE TABLE Run(
 	arena TEXT,
 	referee VARCHAR(64),
 	time_duration REAL, -- in seconds
-	timestamp_start INTEGER, -- unix time stamp
-	timestamp_end INTEGER, -- unix time stamp
+	time_start INTEGER, -- unix time stamp
+	time_end INTEGER, -- unix time stamp
 	scoring TEXT, -- json object with scoring information
 	comments TEXT, -- for Referees
 	complaints TEXT, -- for teams

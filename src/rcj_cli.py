@@ -35,7 +35,7 @@ def main(argv):
 	args = parser.parse_args()
 	print(args)
 
-	rcj = Rcj('database.sqlite')
+	rcj = Rcj('rcj_database.sqlite')
 	if args.command == 'init':
 		rcj.create_database(args.schema)
 	elif args.command == 'referee':

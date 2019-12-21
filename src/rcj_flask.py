@@ -20,10 +20,6 @@ auth = HTTPBasicAuth()
 def verify_password(username, password):
 	return g.rcj.check_referee_password(username, password)
 
-@login_manager.unauthorized_handler
-def unauthorized_handler():
-	return 'Unauthorized'
-
 # https://flask-doc.readthedocs.io/en/latest/patterns/sqlite3.html
 @app.before_request
 def before_request():
@@ -35,14 +31,30 @@ def teardown_request(exception):
 		del g.rcj
 
 @app.route('/')
+@auth.login_required
 def root():
 	return 'Hello from Flask!'
 
-@app.route('/api/submit_run', methods=['PUT', 'POST'])
+@app.route('/api/v1/submit_run', methods=['PUT', 'POST'])
 @auth.login_required
 def submit_run():
 	if request.is_json:
-		return "json"
+		j = request.json
+		competition = j['competition']
+		teamname = j['teamname']
+		round = j['round']
+		arena = j['arena']
+		referee = auth.username()
+		time_duration = j['time']['timeRun']
+		time_start = j['time']['timestampRunStart']
+		time_end = j['time']['timestampRunEnd']
+		scoring = str(j['scoring'])
+		comments = j['comments']
+		complaints = j['complaints']
+		confirmed = j['confirmedByTeamCaptain']
+		g.rcj.store_run(competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed)
+		return ""
 	else:
 		return "Not json"
+
 

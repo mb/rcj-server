@@ -49,7 +49,7 @@ class Test(unittest.TestCase):
 		if os.path.isfile('unittest.db'):
 			os.remove('unittest.db')
 		cls.rcj = Rcj('unittest.db')
-		cls.rcj.create_database('rcj-db.schema')
+		cls.rcj.create_database('rcj_db.schema')
 
 	@classmethod
 	def tearDownClass(cls):

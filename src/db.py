@@ -28,7 +28,7 @@ class RcjDb:
 			c.executescript(f.read())
 		self.db.commit()
 	
-	def store_run(self, competition, team_name, round, arena, referee, time_duration, start_time, end_time, scoring, comments, complaints, confirmed):
+	def store_run(self, competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed):
 		"""
 		Stores run in database overwrites existing runs from the same team on the same round
 		arguments:
@@ -38,17 +38,17 @@ class RcjDb:
 			* arena: id, identifying the arena
 		"""
 		c = self.db.cursor()
-		c.execute('''INSERT INTO Run (competition, teamname, round, arena, referee, time_duration, timestamp_start, timestamp_end, scoring, comments, complaints, confirmed)
+		c.execute('''INSERT INTO Run (competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed)
 		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-		''', (competition, team_name, round, arena, referee, time_duration, start_time, end_time, scoring, comments, complaints, confirmed))
+		''', (competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed))
 	
-	def get_runs(self, team_name):
+	def get_runs(self, teamname):
 		pass
 
-	def get_runs_arena(self, team_name, arena):
+	def get_runs_arena(self, teamname, arena):
 		pass
 	
-	def get_runs_round(self, team_name, round):
+	def get_runs_round(self, teamname, round):
 		pass
 	
 	def get_referees(self):

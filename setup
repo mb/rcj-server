@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./src/rcj_cli.py init src/rcj_db.schema

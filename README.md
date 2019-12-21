@@ -35,3 +35,37 @@ filename = "rcj_database.sqlite"
 [flask]
 secret_key = "`n!'XPma6m(X_xUZ:0,~qPsvj%;e'+_G"
 ```
+
+## Run
+
+[Auth with HTTP-Auth](https://de.wikipedia.org/wiki/HTTP-Authentifizierung#Basic_Authentication)
+
+Generate authorization string for user `NL` with password `wbSwFU6tY1c`: `base64("NL:wbSwFU6tY1c") = Tkw6d2JTd0ZVNnRZMWM=`
+
+Example http request:
+
+
+```
+POST /api/v1/submit_run HTTP/1.1
+Authorization: Basic Tkw6d2JTd0ZVNnRZMWM=
+Content-Type: application/json
+Content-Length: ...
+
+{
+    competition: "line",
+    arena: "A",
+    round: "2",
+    teamname: "pi++",
+    time: {
+        timeRun: 57.82108,
+        timestampRunStart: 1554854400,
+        timestampRunEnd: 1558665000
+    },
+    scoring: {
+    	...
+    },
+    comments: "",
+    confirmedByTeamCaptain: true,
+    complaints: ""
+}
+```

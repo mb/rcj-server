@@ -48,6 +48,9 @@ def submit_run():
 	resp.headers['Access-Control-Allow-Origin'] = 'https://nikolockenvitz.de'
 	resp.headers['Access-Control-Allow-Credentials'] = 'true'
 	if request.is_json:
+		f = open("log", "a")
+		f.write(str(request.json) + "\n")
+		f.close()
 		j = request.json
 		competition = j['competition']
 		teamname = j['teamname']

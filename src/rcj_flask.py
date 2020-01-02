@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, Response
 from flask import g # global variables
 from rcj import Rcj
 from flask_httpauth import HTTPBasicAuth
@@ -34,9 +34,19 @@ def teardown_request(exception):
 def root():
 	return 'Hello from Flask!'
 
+@app.route('/test')
+def test():
+	resp = Response()
+	resp.headers['Access-Control-Allow-Origin'] = 'https://nikolockenvitz.de'
+	resp.headers['Access-Control-Allow-Credentials'] = 'true'
+	return resp
+
 @app.route('/api/v1/submit_run', methods=['PUT', 'POST'])
 @auth.login_required
 def submit_run():
+	resp = Response()
+	resp.headers['Access-Control-Allow-Origin'] = 'https://nikolockenvitz.de'
+	resp.headers['Access-Control-Allow-Credentials'] = 'true'
 	if request.is_json:
 		j = request.json
 		competition = j['competition']
@@ -52,8 +62,11 @@ def submit_run():
 		complaints = j['complaints']
 		confirmed = j['confirmedByTeamCaptain']
 		g.rcj.store_run(competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed)
-		return ""
+		resp.status_code = 200
+		resp.status = 'OK'
 	else:
-		return "Not json"
+		resp.status_code = 400
+		resp.status = 'NOT JSON'
+	return resp
 
 

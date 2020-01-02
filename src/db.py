@@ -41,6 +41,7 @@ class RcjDb:
 		c.execute('''INSERT INTO Run (competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed)
 		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 		''', (competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed))
+		self.db.commit()
 	
 	def get_runs(self, teamname):
 		pass

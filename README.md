@@ -31,9 +31,6 @@ Example `rcj_config.ini`
 ```ini
 [db]
 filename = "rcj_database.sqlite"
-
-[flask]
-secret_key = "`n!'XPma6m(X_xUZ:0,~qPsvj%;e'+_G"
 ```
 
 ## Run
@@ -49,13 +46,13 @@ Example http request:
 POST /api/v1/submit_run HTTP/1.1
 Authorization: Basic Tkw6d2JTd0ZVNnRZMWM=
 Content-Type: application/json
-Content-Length: ...
+Content-Length: 302
 
 {
-	"competition": "line",
-	"arena": "A", 
+	"competition": "2019-berlin-line",
 	"round": "2", 
 	"teamname": "pi++", 
+	"arena": "A",
 	"time": {     
 		"timeRun": 57.82108,
 		"timestampRunStart": 1554854400,

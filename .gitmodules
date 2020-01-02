@@ -1,0 +1,3 @@
+[submodule "rcj-dss"]
+	path = rcj-dss
+	url = https://github.com/nikolockenvitz/rcj-dss

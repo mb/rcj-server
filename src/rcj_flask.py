@@ -1,7 +1,8 @@
-from flask import Flask, request, Response
+from flask import Flask, request, Response, send_from_directory
 from flask import g # global variables
 from rcj import Rcj
 from flask_httpauth import HTTPBasicAuth
+from flask_cors import CORS
 
 from configparser import ConfigParser
 
@@ -10,10 +11,21 @@ parser = ConfigParser()
 parser.read("rcj_config.ini")
 
 # setup flask
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
+CORS(app)
+
+import os
 
 # init the login manager
 auth = HTTPBasicAuth()
+
+@app.route('/dss/<path:path>')
+def send_dss(path):
+	#return path
+	return send_from_directory('../rcj-dss', path)
+	#return os.getcwd()
+	#return send_from_directory('../', 'db.py')
+
 
 @auth.verify_password
 def verify_password(username, password):

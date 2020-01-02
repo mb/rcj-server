@@ -58,7 +58,7 @@ def submit_run_cors():
 	resp.headers['Access-Control-Allow-Origin'] = 'https://nikolockenvitz.de'
 	resp.headers['Access-Control-Allow-Credentials'] = 'true'
 	resp.headers['Access-Control-Allow-Methods'] = 'POST'
-	resp.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+	resp.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
 	return resp
 
 @app.route('/api/v1/submit_run', methods=['PUT', 'POST'])

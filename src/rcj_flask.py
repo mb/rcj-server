@@ -2,7 +2,6 @@ from flask import Flask, request, Response, send_from_directory
 from flask import g # global variables
 from rcj import Rcj
 from flask_httpauth import HTTPBasicAuth
-from flask_cors import CORS
 
 from configparser import ConfigParser
 
@@ -12,7 +11,6 @@ parser.read("rcj_config.ini")
 
 # setup flask
 app = Flask(__name__, static_url_path='')
-CORS(app)
 
 import os
 
@@ -43,7 +41,6 @@ def teardown_request(exception):
 
 @app.route('/')
 @auth.login_required
-@cross_origin()
 def root():
 	return 'Hello from Flask!'
 
@@ -54,9 +51,17 @@ def test():
 	resp.headers['Access-Control-Allow-Credentials'] = 'true'
 	return resp
 
+@app.route('/api/v1/submit_run', methods=['OPTIONS'])
+@auth.login_required
+def submit_run_cors():
+	resp = Response()
+	resp.headers['Access-Control-Allow-Origin'] = 'https://nikolockenvitz.de'
+	resp.headers['Access-Control-Allow-Credentials'] = 'true'
+	resp.headers['Access-Control-Allow-Methods'] = 'POST'
+	return resp
+
 @app.route('/api/v1/submit_run', methods=['PUT', 'POST'])
 @auth.login_required
-@cross_origin()
 def submit_run():
 	resp = Response()
 	resp.headers['Access-Control-Allow-Origin'] = 'https://nikolockenvitz.de'

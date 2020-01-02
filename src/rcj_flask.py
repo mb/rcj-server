@@ -43,6 +43,7 @@ def teardown_request(exception):
 
 @app.route('/')
 @auth.login_required
+@cross_origin()
 def root():
 	return 'Hello from Flask!'
 
@@ -55,6 +56,7 @@ def test():
 
 @app.route('/api/v1/submit_run', methods=['PUT', 'POST'])
 @auth.login_required
+@cross_origin()
 def submit_run():
 	resp = Response()
 	resp.headers['Access-Control-Allow-Origin'] = 'https://nikolockenvitz.de'

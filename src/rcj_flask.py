@@ -67,6 +67,8 @@ def submit_run():
 	resp = Response()
 	resp.headers['Access-Control-Allow-Origin'] = 'https://nikolockenvitz.de'
 	resp.headers['Access-Control-Allow-Credentials'] = 'true'
+	resp.headers['Access-Control-Allow-Methods'] = 'POST'
+	resp.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
 	if request.is_json:
 		f = open("log", "a")
 		f.write(str(request.json) + "\n")

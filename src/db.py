@@ -28,7 +28,7 @@ class RcjDb:
             c.executescript(f.read())
         self.db.commit()
     
-    def store_run(self, competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed):
+    def store_run(self, run):
         """
         Stores run in database overwrites existing runs from the same team on the same round
         arguments:
@@ -38,9 +38,9 @@ class RcjDb:
             * arena: id, identifying the arena
         """
         c = self.db.cursor()
-        c.execute('''INSERT INTO Run (competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed))
+        c.execute('''INSERT INTO Run (competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, score, comments, complaints, confirmed)
+            VALUES (:competition, :teamname, :round, :arena, :referee, :time_duration, :time_start, :time_end, :scoring, :score, :comments, :complaints, :confirmed)''',
+            run)
         self.db.commit()
     
     def get_runs(self, teamname):

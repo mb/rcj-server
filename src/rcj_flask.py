@@ -65,33 +65,41 @@ def submit_run_cors():
 @auth.login_required
 def submit_run():
     resp = Response()
-    resp.headers['Access-Control-Allow-Origin'] = 'https://nikolockenvitz.de'
+    # TODO: add cors to all responses
+    resp.headers['Access-Control-Allow-Origin'] = 'https://rcjberlin.github.io'
     resp.headers['Access-Control-Allow-Credentials'] = 'true'
     resp.headers['Access-Control-Allow-Methods'] = 'POST'
     resp.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
-    if request.is_json:
-        f = open("log", "a")
-        f.write(str(request.json) + "\n")
-        f.close()
-        j = request.json
-        competition = j['competition']
-        teamname = j['teamname']
-        round = j['round']
-        arena = j['arena']
-        referee = auth.username()
-        time_duration = j['time']['timeRun']
-        time_start = j['time']['timestampRunStart']
-        time_end = j['time']['timestampRunEnd']
-        scoring = str(j['scoring'])
-        comments = j['comments']
-        complaints = j['complaints']
-        confirmed = j['confirmedByTeamCaptain']
-        g.rcj.store_run(competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed)
-        resp.status_code = 200
-        resp.status = 'OK'
-    else:
+
+    # check for valid json
+    if not request.is_json:
         resp.status_code = 400
-        resp.status = 'NOT JSON'
+        resp.response = 'not json'
+        return resp
+    try:
+        run = request.json
+    except ValueError as e:
+        resp.status_code = 400
+        resp.response = str(e)
+
+    # check for missing attributes
+    attr = ['competition', 'teamname', 'round', 'arena', 'time_duration', 'time_start', 'time_end', 'scoring', 'comments', 'complaints', 'confirmed']
+    missing = [el for el in attr if el not in run]
+    # TODO: check types of attributes
+    if missing != []:
+        # TODO: write error in response text
+        resp.status_code = 400
+        resp.response = "Missing attributes: {}\n".format(", ".join(missing))
+        return resp
+
+    # add username and self computed scoring to dictionary
+    run['referee'] = auth.username()
+    run['score'] = 0 # TODO: calculate the score
+    run['scoring'] = str(run['scoring']) # stringify the score for the database
+
+    # log all valid incoming requests
+    f = open("flast.log", "a")
+    f.write(str(run) + "\n")
+    f.close()
+    g.rcj.store_run(run)
     return resp
-
-

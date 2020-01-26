@@ -3,6 +3,7 @@
 from rcj import Rcj
 import unittest
 import os
+import json
 
 class Test(unittest.TestCase):
     """Unit test framework for Rcj lib"""
@@ -17,32 +18,33 @@ class Test(unittest.TestCase):
     
     def test_run(self):
         self.rcj.update_referee('referee_run', 'some_pw')
-        scoring = '''{
-            teamStarted: true,
-            evacuationPoint: "high",
-            sections: [ ... ],
-            victims: {
-                deadVictimsBeforeAllLivingVictims: 3,
-                livingVictims: 2,
-                deadVictimsAfterAllLivingVictims: 0
-            },
-            leftEvacuationZone: false,
-            score: 314
-        }'''.replace(' ', '').replace('\t', '').replace('\n', '')
-        self.rcj.store_run(
-            'line',
-            'pi++',
-            1,
-            'A',
-            'referee_run',
-            120.01,
-            1576934336,
-            1576934456,
-            scoring,
-            'comments from referees',
-            'comlaining',
-            True
-        )
+        run = {
+            #'competition': 'line',
+            'teamname': 'pi++',
+            'round': '3',
+            'arena': 'A',
+            'referee': 'referee_run',
+            'time_duration': 120.01,
+            'time_start': 1576934336,
+            'time_end': 1576934456,
+            'scoring': '''{
+                teamStarted: true,
+                evacuationPoint: "high",
+                sections: [ ... ],
+                victims: {
+                    deadVictimsBeforeAllLivingVictims: 3,
+                    livingVictims: 2,
+                    deadVictimsAfterAllLivingVictims: 0
+                },
+                leftEvacuationZone: false,
+                score: 314
+            }'''.replace(' ', '').replace('\t', '').replace('\n', ''),
+            'score': 314,
+            'comments': 'comments from referees',
+            'complaints': '',
+            'confirmed': True,
+        }
+        self.rcj.store_run(run)
 
     @classmethod
     def setUpClass(cls):

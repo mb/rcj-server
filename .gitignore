@@ -5,3 +5,4 @@ venv/
 rcj_database.sqlite
 *.db
 *.sqlite
+*.log

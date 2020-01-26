@@ -1,24 +1,22 @@
 #!/bin/bash
 curl --include \
-	--header "Content-Type: application/json" \
-	--header "Authorization: Basic dGVzdDp0ZXN0" \
-	--request POST \
-	--data '{
-	"competition": "line",
-	"arena": "A", 
-	"round": "3", 
-	"teamname": "pi++", 
-	"time": {     
-		"timeRun": 57.82108,
-		"timestampRunStart": 1554854400.01,
-		"timestampRunEnd": 1558665000.101
-	},
-	"scoring": {  
-		"teamStarted": true
-	},
-	"comments": "",
-	"confirmedByTeamCaptain": true,
-	"complaints": ""
+    --header "Content-Type: application/json" \
+    --header "Authorization: Basic dGVzdDp0ZXN0" \
+    --request POST \
+    --data '{
+    "competition": "line",
+    "teamname": "pi++", 
+    "round": "3", 
+    "arena": "A", 
+    "time_duration": 57.82108,
+    "time_start": 1554854400.01,
+    "time_end": 1558665000.101,
+    "scoring": {  
+        "teamStarted": true
+    },
+    "comments": "",
+    "confirmed": true,
+    "complaints": ""
 }
 ' \
-	http://localhost:5000/api/v1/submit_run
+    http://localhost:5000/api/v1/submit_run

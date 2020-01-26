@@ -4,19 +4,19 @@ CREATE TABLE Referee(
 	pwhash TEXT
 );
 CREATE TABLE Run(
-	competition TEXT,
-	teamname TEXT,
-	round INTEGER,
-	arena TEXT,
-	referee VARCHAR(64),
-	time_duration REAL, -- in seconds
-	time_start REAL, -- unix time stamp
-	time_end REAL, -- unix time stamp
-	scoring TEXT, -- json object with scoring information
-	score INTEGER, -- calculated in backend
-	comments TEXT, -- for Referees
-	complaints TEXT, -- for teams
-	confirmed BOOLEAN,
+	competition TEXT NOT NULL,
+	teamname TEXT NOT NULL,
+	round INTEGER NOT NULL,
+	arena TEXT NOT NULL,
+	referee VARCHAR(64) NOT NULL,
+	time_duration REAL NOT NULL, -- in seconds
+	time_start REAL NOT NULL, -- unix time stamp
+	time_end REAL NOT NULL, -- unix time stamp
+	scoring TEXT NOT NULL, -- json object with scoring information
+	score INTEGER NOT NULL, -- calculated in backend
+	comments TEXT NOT NULL, -- for Referees
+	complaints TEXT NOT NULL, -- for teams
+	confirmed BOOLEAN NOT NULL,
 	FOREIGN KEY(referee) REFERENCES Referee(username),
 	PRIMARY KEY(competition, teamname, round)
 );

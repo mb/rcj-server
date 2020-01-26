@@ -1,8 +1,10 @@
+#!/usr/bin/env python3
+
 from db import RcjDb
 from werkzeug.security import generate_password_hash, check_password_hash
 
 class Rcj:
-    def __init__(self, database):
+    def __init__(self, database="rcj_database.sqlite"):
         self._database_name = database
         self.db = RcjDb(self._database_name)
     
@@ -13,16 +15,40 @@ class Rcj:
     def create_database(self, schema_file):
         self.db.create_database(schema_file)
     
-    def store_run(self, competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed):
+    def store_run(self, run):
         """
         Stores run in database overwrites existing runs from the same team on the same round
-        arguments:
-            * competition: string, should be unique for each compition
-            * teamname: string, containing only ascii chars identifying the team
-            * round: integer, together with competition and teamname the primary key
-            * arena: id, identifying the arena
+        example dictionary for the parameter run:
+            run = {
+                'competition': 'line',
+                'teamname': 'pi++',
+                'round': '3',
+                'arena': 'A',
+                'referee': 'referee_run',
+                'time_duration': 120.01,
+                'time_start': 1576934336,
+                'time_end': 1576934456,
+                'scoring': '''{
+                    teamStarted: true,
+                    evacuationPoint: "high",
+                    sections: [ ... ],
+                    victims: {
+                        deadVictimsBeforeAllLivingVictims: 3,
+                        livingVictims: 2,
+                        deadVictimsAfterAllLivingVictims: 0
+                    },
+                    leftEvacuationZone: false,
+                    score: 314
+                }'''.replace(' ', '').replace('\t', '').replace('\n', ''),
+                'score': 314,
+                'comments': 'comments from referees',
+                'complaints': '',
+                'confirmed': True,
+            }
+        If a value is missing from the dictionary, a ValueException is raised
         """
-        self.db.store_run(competition, teamname, round, arena, referee, time_duration, time_start, time_end, scoring, comments, complaints, confirmed)
+        # TODO: logging
+        self.db.store_run(run)
 
     def get_runs(self, teamname):
         pass
@@ -53,4 +79,6 @@ class Rcj:
         pwhash = generate_password_hash(password)
         self.db.update_referee(username, pwhash)
 
-
+if __name__ == '__main__':
+    import fire #cli
+    fire.Fire(Rcj)

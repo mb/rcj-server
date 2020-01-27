@@ -108,4 +108,4 @@ def submit_run():
 @app.route('/api/v1/get_runs', methods=['GET'])
 @auth.login_required
 def get_runs():
-    return g.rcj.get_runs
+    return {"runs": g.rcj.get_runs()}

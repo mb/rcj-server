@@ -50,13 +50,13 @@ class Rcj:
         # TODO: logging
         self.db.store_run(run)
 
-    def get_runs(self, teamname):
-        pass
+    def get_runs(self):
+        return self.db.get_runs()
 
-    def get_runs_arena(self, teamname, arena):
+    def get_runs_arena(self, arena):
         pass
     
-    def get_runs_round(self, teamname, round):
+    def get_runs_round(self, round):
         pass
     
     def get_referees(self):

@@ -2,6 +2,7 @@ from flask import Flask, request, Response, send_from_directory
 from flask import g # global variables
 from rcj import Rcj
 from flask_httpauth import HTTPBasicAuth
+from flask import jsonify
 import json
 
 from configparser import ConfigParser
@@ -108,4 +109,4 @@ def submit_run():
 @app.route('/api/v1/get_runs', methods=['GET'])
 @auth.login_required
 def get_runs():
-    return {"runs": g.rcj.get_runs()}
+    return jsonify({'runs': g.rcj.get_runs()})

@@ -72,10 +72,6 @@ class RcjDb:
         """
         c = self.db.cursor()
         #https://stackoverflow.com/questions/15277373/
-        c.execute('''INSERT INTO referee (username, pwhash)
-            VALUES (?, ?)
-            ON CONFLICT(username)
-            DO UPDATE SET pwhash=excluded.pwhash;
-        ''', (username, pwhash))
+        c.execute('''INSERT OR REPLACE INTO referee (username, pwhash) VALUES (?, ?)''', (username, pwhash))
         self.db.commit()
 

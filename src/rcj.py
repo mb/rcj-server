@@ -20,7 +20,7 @@ class Rcj:
     def _log_run(self, run, comment):
         # use \t as separator, as json.dumps masks it with \\t
         line = "{date}\t{comment}\t{run}\n".format(
-            date=datetime.datetime.now().isoformat(),
+            date=datetime.datetime.utcnow().isoformat(),
             comment=comment,
             run=json.dumps(run)
         )

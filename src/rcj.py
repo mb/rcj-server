@@ -47,7 +47,33 @@ class Rcj:
             }
         If a value is missing from the dictionary, a ValueException is raised
         """
-        # TODO: logging
+        # check for missing attributes
+        attr = [
+            ('competition', str),
+            ('teamname', str),
+            ('round', int),
+            ('arena', str),
+            ('time_duration', float),
+            ('time_start', float),
+            ('time_end', float),
+            ('scoring', str),
+            ('comments', str),
+            ('complaints', str),
+            ('confirmed', bool)
+        ]
+        missing = [el[0] for el in attr if el[0] not in run]
+        if missing != []:
+            raise ValueError("Missing attributes: {}\n".format(", ".join(missing)))
+        wrong_type = ["{} (found {}, expected {})".format(el[0], type(run[el[0]]), el[1])
+                for el in attr if type(run[el[0]]) != el[1]]
+        if wrong_type != []:
+            raise ValueError("Attributes with wrong type:\n{}".format("\n".join(wrong_type)))
+ 
+        # log all valid incoming requests
+        with open('store_run.log', 'a') as f:
+            f.write(str(run) + "\n")
+            f.close()
+
         self.db.store_run(run)
 
     def get_runs(self):

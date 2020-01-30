@@ -6,8 +6,8 @@ curl --include \
     --data '{
     "competition": "2020-berlin-line",
     "teamname": "pi++", 
-    "round": "3", 
-    "arena": "A", 
+    "round": 4, 
+    "arena": "D", 
     "time_duration": 57.82108,
     "time_start": 1554854400.01,
     "time_end": 1558665000.101,

@@ -66,23 +66,15 @@ def submit_run():
     except ValueError as e:
         return str(e), 400
 
-    # check for missing attributes
-    attr = ['competition', 'teamname', 'round', 'arena', 'time_duration', 'time_start', 'time_end', 'scoring', 'comments', 'complaints', 'confirmed']
-    missing = [el for el in attr if el not in run]
-    # TODO: check types of attributes
-    if missing != []:
-        return "Missing attributes: {}\n".format(", ".join(missing)), 400
-
     # add username and self computed scoring to dictionary
     run['referee'] = auth.username()
     run['score'] = 0 # TODO: calculate the score
     run['scoring'] = str(run['scoring']) # stringify the score for the database
 
-    # log all valid incoming requests
-    f = open("flast.log", "a")
-    f.write(str(run) + "\n")
-    f.close()
-    g.rcj.store_run(run)
+    try:
+        g.rcj.store_run(run)
+    except ValueError as e:
+        return "{}: {}".format(repr(type(e)), str(e)), 400
     return 'ok', 200
 
 @app.route('/api/v1/get_runs', methods=['GET'])

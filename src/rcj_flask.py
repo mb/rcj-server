@@ -4,6 +4,7 @@ from rcj import Rcj
 from flask_httpauth import HTTPBasicAuth
 from flask import jsonify
 import json
+from flask_cors import CORS
 
 from configparser import ConfigParser
 
@@ -13,19 +14,23 @@ parser.read("rcj_config.ini")
 
 # setup flask
 app = Flask(__name__, static_url_path='')
+CORS(app,
+    supports_credentials=True,
+    resources={
+        r'/api/*': {
+            'origins': ['https://rcjberlin.github.io', 'https://nikolockenvitz.de']
+        }
+    })
 
 import os
 
 # init the login manager
 auth = HTTPBasicAuth()
 
+# send digital scoring sheet
 @app.route('/dss/<path:path>')
 def send_dss(path):
-    #return path
     return send_from_directory('../rcj-dss', path)
-    #return os.getcwd()
-    #return send_from_directory('../', 'db.py')
-
 
 @auth.verify_password
 def verify_password(username, password):
@@ -46,53 +51,27 @@ def teardown_request(exception):
 def root():
     return 'Hello from Flask!'
 
-@app.route('/test')
+@app.route('/api/cors-test')
 def test():
-    resp = Response()
-    resp.headers['Access-Control-Allow-Origin'] = 'https://nikolockenvitz.de'
-    resp.headers['Access-Control-Allow-Credentials'] = 'true'
-    return resp
-
-@app.route('/api/v1/submit_run', methods=['OPTIONS'])
-@auth.login_required
-def submit_run_cors():
-    resp = Response()
-    resp.headers['Access-Control-Allow-Origin'] = 'https://nikolockenvitz.de'
-    resp.headers['Access-Control-Allow-Credentials'] = 'true'
-    resp.headers['Access-Control-Allow-Methods'] = 'POST'
-    resp.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
-    return resp
+    return 'ok'
 
 @app.route('/api/v1/submit_run', methods=['PUT', 'POST'])
 @auth.login_required
 def submit_run():
-    resp = Response()
-    # TODO: add cors to all responses
-    resp.headers['Access-Control-Allow-Origin'] = 'https://rcjberlin.github.io'
-    resp.headers['Access-Control-Allow-Credentials'] = 'true'
-    resp.headers['Access-Control-Allow-Methods'] = 'POST'
-    resp.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
-
     # check for valid json
     if not request.is_json:
-        resp.status_code = 400
-        resp.response = 'not json'
-        return resp
+        return 'not json', 400
     try:
         run = request.json
     except ValueError as e:
-        resp.status_code = 400
-        resp.response = str(e)
+        return str(e), 400
 
     # check for missing attributes
     attr = ['competition', 'teamname', 'round', 'arena', 'time_duration', 'time_start', 'time_end', 'scoring', 'comments', 'complaints', 'confirmed']
     missing = [el for el in attr if el not in run]
     # TODO: check types of attributes
     if missing != []:
-        # TODO: write error in response text
-        resp.status_code = 400
-        resp.response = "Missing attributes: {}\n".format(", ".join(missing))
-        return resp
+        return "Missing attributes: {}\n".format(", ".join(missing)), 400
 
     # add username and self computed scoring to dictionary
     run['referee'] = auth.username()
@@ -104,7 +83,7 @@ def submit_run():
     f.write(str(run) + "\n")
     f.close()
     g.rcj.store_run(run)
-    return resp
+    return 'ok', 200
 
 @app.route('/api/v1/get_runs', methods=['GET'])
 @auth.login_required

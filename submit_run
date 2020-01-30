@@ -4,7 +4,7 @@ curl --include \
     --header "Authorization: Basic dGVzdDp0ZXN0" \
     --request POST \
     --data '{
-    "competition": "line",
+    "competition": "2020-berlin-line",
     "teamname": "pi++", 
     "round": "3", 
     "arena": "A", 

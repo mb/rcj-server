@@ -3,6 +3,7 @@
 from db import RcjDb
 from werkzeug.security import generate_password_hash, check_password_hash
 import json
+import datetime
 
 class Rcj:
     def __init__(self, database="rcj_database.sqlite"):
@@ -19,11 +20,12 @@ class Rcj:
     def _log_run(self, run, comment):
         # use \t as separator, as json.dumps masks it with \\t
         line = "{date}\t{comment}\t{run}\n".format(
-            date=0,
+            date=datetime.datetime.now().isoformat(),
             comment=comment,
             run=json.dumps(run)
         )
         with open('all_runs.log', 'a') as f:
+            # TODO: check if this is a race bug
             f.write(line)
     
     def store_run(self, run):

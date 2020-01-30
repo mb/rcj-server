@@ -51,7 +51,7 @@ def teardown_request(exception):
 def root():
     return 'Hello from Flask!'
 
-@app.route('/api/cors-test')
+@app.route('/api/v1/cors_test')
 def test():
     return 'ok'
 

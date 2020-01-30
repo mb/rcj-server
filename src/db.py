@@ -27,6 +27,9 @@ class RcjDb:
         with open(schema_file) as f:
             c.executescript(f.read())
         self.db.commit()
+
+    def get_run(self, competition, teamname, round):
+        return self._query_db("SELECT * FROM Run WHERE competition=? AND teamname=? AND round=?", (competition, teamname, round), one=True)
     
     def store_run(self, run):
         """

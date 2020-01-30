@@ -74,7 +74,7 @@ def submit_run():
     try:
         g.rcj.store_run(run)
     except ValueError as e:
-        return "{}: {}".format(repr(type(e)), str(e)), 400
+        return "{}: {}".format('ValueError', str(e)), 400
     return 'ok', 200
 
 @app.route('/api/v1/get_runs', methods=['GET'])

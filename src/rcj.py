@@ -2,6 +2,7 @@
 
 from db import RcjDb
 from werkzeug.security import generate_password_hash, check_password_hash
+import json
 
 class Rcj:
     def __init__(self, database="rcj_database.sqlite"):
@@ -14,9 +15,20 @@ class Rcj:
     
     def create_database(self, schema_file):
         self.db.create_database(schema_file)
+
+    def _log_run(self, run, comment):
+        # use \t as separator, as json.dumps masks it with \\t
+        line = "{date}\t{comment}\t{run}\n".format(
+            date=0,
+            comment=comment,
+            run=json.dumps(run)
+        )
+        with open('all_runs.log', 'a') as f:
+            f.write(line)
     
     def store_run(self, run):
         """
+        raises ValueError on incorrect input data
         Stores run in database overwrites existing runs from the same team on the same round
         example dictionary for the parameter run:
             run = {
@@ -47,7 +59,7 @@ class Rcj:
             }
         If a value is missing from the dictionary, a ValueException is raised
         """
-        # check for missing attributes
+        # check for missing attributes and correct type
         attr = [
             ('competition', str),
             ('teamname', str),
@@ -68,11 +80,16 @@ class Rcj:
                 for el in attr if type(run[el[0]]) != el[1]]
         if wrong_type != []:
             raise ValueError("Attributes with wrong type:\n{}".format("\n".join(wrong_type)))
+
+        # TODO: calculate score and compare with previos result + result from rcj-dss
+        # check if the run is already stored
+        existing_run = self.db.get_run(run['competition'], run['teamname'], run['round'])
+        if existing_run != None:
+            self._log_run(run, "duplicate") # todo: check what is different
+            raise ValueError("run already exists, but logged successfully")
  
         # log all valid incoming requests
-        with open('store_run.log', 'a') as f:
-            f.write(str(run) + "\n")
-            f.close()
+        self._log_run(run, "ok")
 
         self.db.store_run(run)
 

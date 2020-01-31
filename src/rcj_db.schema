@@ -9,9 +9,9 @@ CREATE TABLE Run(
 	round INTEGER NOT NULL,
 	arena TEXT NOT NULL,
 	referee VARCHAR(64) NOT NULL,
-	time_duration REAL NOT NULL, -- in seconds
-	time_start REAL NOT NULL, -- unix time stamp
-	time_end REAL NOT NULL, -- unix time stamp
+	time_duration INTEGER NOT NULL, -- in seconds
+	time_start INTEGER NOT NULL, -- unix time stamp
+	time_end INTEGER NOT NULL, -- unix time stamp
 	scoring TEXT NOT NULL, -- json object with scoring information
 	score INTEGER NOT NULL, -- calculated in backend
 	comments TEXT NOT NULL, -- for Referees

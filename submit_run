@@ -8,9 +8,9 @@ curl --include \
     "teamname": "pi++", 
     "round": 4, 
     "arena": "D", 
-    "time_duration": 57.82108,
-    "time_start": 1554854400.01,
-    "time_end": 1558665000.101,
+    "time_duration": 57,
+    "time_start": 1554854400,
+    "time_end": 1558665000,
     "scoring": {  
         "teamStarted": true
     },

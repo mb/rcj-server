@@ -19,12 +19,12 @@ class Test(unittest.TestCase):
     def test_run(self):
         self.rcj.update_referee('referee_run', 'some_pw')
         run = {
-            #'competition': 'line',
+            'competition': 'line',
             'teamname': 'pi++',
-            'round': '3',
+            'round': 3,
             'arena': 'A',
             'referee': 'referee_run',
-            'time_duration': 120.01,
+            'time_duration': 120,
             'time_start': 1576934336,
             'time_end': 1576934456,
             'scoring': '''{

@@ -68,10 +68,6 @@ def submit_run():
 
     # add username and self computed scoring to dictionary
     run['referee'] = auth.username()
-    run['score'] = 0 # TODO: calculate the score
-    if 'scoring' in run:
-        run['scoring'] = str(run['scoring']) # stringify the score for the database
-
     try:
         g.rcj.store_run(run)
     except ValueError as e:

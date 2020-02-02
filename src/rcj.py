@@ -67,10 +67,11 @@ class Rcj:
             ('teamname', str),
             ('round', int),
             ('arena', str),
+            ('referee', str),
             ('time_duration', int),
             ('time_start', int),
             ('time_end', int),
-            ('scoring', str),
+            ('scoring', dict),
             ('comments', str),
             ('complaints', str),
             ('confirmed', bool)
@@ -84,6 +85,8 @@ class Rcj:
             raise ValueError("Attributes with wrong type:\n{}".format("\n".join(wrong_type)))
 
         # TODO: calculate score and compare with previos result + result from rcj-dss
+        run['score'] = 0
+        run['scoring'] = json.dumps(run['scoring'])
         # check if the run is already stored
         existing_run = self.db.get_run(run['competition'], run['teamname'], run['round'])
         if existing_run != None:
@@ -98,11 +101,8 @@ class Rcj:
     def get_runs(self):
         return self.db.get_runs()
 
-    def get_runs_arena(self, arena):
-        pass
-    
-    def get_runs_round(self, round):
-        pass
+    def get_runs_competition(self, competition):
+        return self.db.get_runs_competition(competition)
     
     def get_referees(self):
         return self.db.get_referees()

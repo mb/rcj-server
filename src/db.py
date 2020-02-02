@@ -50,11 +50,8 @@ class RcjDb:
         # TODO: specify competition?
         return self._query_db("SELECT * FROM Run")
 
-    def get_runs_arena(self, arena):
-        pass
-    
-    def get_runs_round(self, round):
-        pass
+    def get_runs_competition(self, competition):
+        return self._query_db("SELECT * FROM Run WHERE competition=?", (competition,))
     
     def get_referees(self):
         return self._query_db('SELECT * FROM referee')

@@ -74,7 +74,18 @@ def submit_run():
         return "{}: {}".format('ValueError', str(e)), 400
     return 'ok', 200
 
+@app.route('/api/v1/dump_runs', methods=['GET'])
+@auth.login_required
+def dump_runs():
+    return jsonify({'runs': g.rcj.dump_runs()})
+
 @app.route('/api/v1/get_runs', methods=['GET'])
 @auth.login_required
 def get_runs():
     return jsonify({'runs': g.rcj.get_runs()})
+
+@app.route('/api/v1/get_runs/competition/<string:competition>', methods=['GET'])
+@auth.login_required
+def get_runs_competition(competition):
+    return jsonify({'runs': g.rcj.get_runs_competition(competition)})
+

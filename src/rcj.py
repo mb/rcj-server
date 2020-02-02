@@ -14,7 +14,7 @@ class Rcj:
         if hasattr(self, '_db'):
             del self._db
     
-    def create_database(self, schema_file):
+    def init_database(self, schema_file):
         self.db.create_database(schema_file)
 
     def _log_run(self, run, comment):
@@ -86,17 +86,24 @@ class Rcj:
 
         # TODO: calculate score and compare with previos result + result from rcj-dss
         run['score'] = 0
-        run['scoring'] = json.dumps(run['scoring'])
         # check if the run is already stored
         existing_run = self.db.get_run(run['competition'], run['teamname'], run['round'])
         if existing_run != None:
             self._log_run(run, "duplicate") # todo: check what is different
             raise ValueError("run already exists, but logged successfully")
  
+        run['scoring'] = json.dumps(run['scoring'])
         # log all valid incoming requests
         self._log_run(run, "ok")
 
         self.db.store_run(run)
+
+    def dump_runs(self):
+        runs = self.db.dump_runs()
+        for run in runs:
+            print(run['scoring'])
+            run['scoring'] = json.loads(run['scoring'])
+        return runs
 
     def get_runs(self):
         return self.db.get_runs()

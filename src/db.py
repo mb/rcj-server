@@ -46,12 +46,14 @@ class RcjDb:
             run)
         self.db.commit()
     
-    def get_runs(self):
-        # TODO: specify competition?
+    def dump_runs(self):
         return self._query_db("SELECT * FROM Run")
 
+    def get_runs(self):
+        return self._query_db("SELECT competition, teamname, round, arena, time_duration, score FROM Run")
+
     def get_runs_competition(self, competition):
-        return self._query_db("SELECT * FROM Run WHERE competition=?", (competition,))
+        return self._query_db("SELECT teamname, round, arena, time_duration, score FROM Run WHERE competition=?", (competition,))
     
     def get_referees(self):
         return self._query_db('SELECT * FROM referee')

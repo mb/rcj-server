@@ -27,6 +27,9 @@ class Rcj:
         with open('all_runs.log', 'a') as f:
             # TODO: check if this is a race bug
             f.write(line)
+
+    def calculate_score(self, scoring):
+        return 0
     
     def store_run(self, run):
         """
@@ -84,8 +87,8 @@ class Rcj:
         if wrong_type != []:
             raise ValueError("Attributes with wrong type:\n{}".format("\n".join(wrong_type)))
 
-        # TODO: calculate score and compare with previos result + result from rcj-dss
-        run['score'] = 0
+        # TODO: compare with previos result + result from rcj-dss
+        run['score'] = self.calculate_score(run['scoring'])
         # check if the run is already stored
         existing_run = self.db.get_run(run['competition'], run['teamname'], run['round'])
         if existing_run != None:

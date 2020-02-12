@@ -55,6 +55,11 @@ def root():
 def test():
     return 'ok'
 
+@app.route('/api/v1/login_required')
+@auth.login_required
+def login_required():
+    return 'ok'
+
 @app.route('/api/v1/submit_run', methods=['PUT', 'POST'])
 @auth.login_required
 def submit_run():

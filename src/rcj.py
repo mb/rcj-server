@@ -29,6 +29,8 @@ class Rcj:
             f.write(line)
 
     def calculate_score(self, scoring):
+        if 'score' in scoring:
+            return scoring['score']
         return 0
     
     def store_run(self, run):

@@ -94,3 +94,16 @@ def get_runs():
 def get_runs_competition(competition):
     return jsonify({'runs': g.rcj.get_runs_competition(competition)})
 
+@app.route('/crud', methods=['GET'])
+def crud():
+    return send_from_directory('../public', 'crud.html')
+
+@app.route('/api/v2/sql', methods=['POST'])
+def sql():
+    # check auth, only certain users / roles?
+    # check supplied csrf token, verify, invalidate this in list of allowed tokens, create new one and send this
+    # csrf library? csrf really needed (depending on how credentials are stored and transmitted)?!
+    # execute statement and return result
+    # logging?
+    # provide schema?
+    return "in progress"

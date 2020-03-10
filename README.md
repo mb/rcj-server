@@ -41,28 +41,32 @@ Generate authorization string for user `NL` with password `wbSwFU6tY1c`: `base64
 
 Example http request:
 
-
 ```
 POST /api/v1/submit_run HTTP/1.1
 Authorization: Basic Tkw6d2JTd0ZVNnRZMWM=
 Content-Type: application/json
-Content-Length: 302
+Content-Length: 370
 
 {
-	"competition": "2019-berlin-line",
-	"round": "2", 
-	"teamname": "pi++", 
-	"arena": "A",
-	"time": {     
-		"timeRun": 57.82108,
-		"timestampRunStart": 1554854400,
-		"timestampRunEnd": 1558665000
-	},
-	"scoring": {  
-		"teamStarted": true
-	},
-	"comments": "",
-	"confirmedByTeamCaptain": true,
-	"complaints": ""
+    referee: {
+        name: "NL",
+        auth: "wbSwFU6tY1c"
+    },
+    competition: "2020-berlin-line",
+    arena: "Arena A",
+    round: "2",
+    teamname: "pi++",
+    time_duration: 57,
+    time_start: 1554854400,
+    time_end: 1558665000,
+    scoring: {
+        teamStarted: true
+        score: 5
+    },
+    comments: "",
+    confirmed: true,
+    complaints: ""
 }
 ```
+See https://github.com/rcjberlin/rcj-dss#evaluation for more details.
+

@@ -94,16 +94,35 @@ def get_runs():
 def get_runs_competition(competition):
     return jsonify({'runs': g.rcj.get_runs_competition(competition)})
 
+def api_v2_check_auth(request):
+    username = request['referee']['name']
+    password = request['referee']['auth']
+    return g.rcj.check_referee_password(username, password)
+
 @app.route('/crud', methods=['GET'])
 def crud():
     return send_from_directory('../public', 'crud.html')
+@app.route('/crud/main.js', methods=['GET'])
+def crud_main_js():
+    return send_from_directory('../public', 'main.js')
 
 @app.route('/api/v2/sql', methods=['POST'])
 def sql():
-    # check auth, only certain users / roles?
-    # check supplied csrf token, verify, invalidate this in list of allowed tokens, create new one and send this
-    # csrf library? csrf really needed (depending on how credentials are stored and transmitted)?!
-    # execute statement and return result
+    if not request.is_json:
+        return jsonify({'error': 'not json'}), 400
+    try:
+        req = request.json
+    except ValueError as e:
+        return jsonify({'error': str(e)}), 400
+
+    if(not api_v2_check_auth(req)):
+        return jsonify({'error': 'Unauthorized'}), 401
+    if(req['referee']['name'] not in ["niko", "manuel"]):
+        return jsonify({'error': 'Forbidden'}), 403
+
+    sql_statement = req['sqlStatement']
+    result = g.rcj.execute_sql_statement(sql_statement)
+
     # logging?
     # provide schema?
-    return "in progress"
+    return jsonify(result)

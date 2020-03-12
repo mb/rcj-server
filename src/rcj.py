@@ -136,6 +136,12 @@ class Rcj:
         pwhash = generate_password_hash(password)
         self.db.update_referee(username, pwhash)
 
+    def execute_sql_statement(self, statement):
+        """
+        executes the statement and returns the result (including column names)
+        """
+        return self.db._execute_statement(statement)
+
 if __name__ == '__main__':
     import fire #cli
     fire.Fire(Rcj)

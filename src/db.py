@@ -22,6 +22,22 @@ class RcjDb:
         else:
             return rv
 
+    def _execute_statement(self, statement):
+        # split into multiple statements in case there are multiple
+        statements = [s.strip() for s in statement.replace("\n", " ").split(";")]
+        r = []
+        for statement in statements:
+            if(statement == ""): continue
+            try:
+                cur = self.db.execute(statement)
+                r.append({'statement': statement,
+                            'result': cur.fetchall(),
+                            'description': [el[0] for el in cur.description] if cur.description else []})
+            except Exception as e:
+                return {'error': str(e), 'statement': statement}
+        self.db.commit()
+        return r
+
     def create_database(self, schema_file):
         c = self.db.cursor()
         with open(schema_file) as f:

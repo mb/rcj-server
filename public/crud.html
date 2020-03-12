@@ -6,11 +6,20 @@
         <title>rcj-server - CRUD</title>
 
         <!--<link rel="stylesheet" href="./style.css">-->
-        <script src="main.js" type="text/javascript" defer></script>
+        <script src="./crud/main.js" type="text/javascript" defer></script>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            tr, td {
+                padding: 0.1em 0.5em;
+                border: 1px solid #ccc;
+            }
+        </style>
     </head>
 
     <body>
-        <div style="width: 100%; max-width: 800px; background: #eee; margin: auto; padding: 1vw;">
+        <div style="width: 95vw; max-width: 1200px; background: #eee; margin: auto; padding: 1vw;">
             <form>
                 <h1>rcj-server - CRUD</h1>
                 <p>Instead of searching for vulnerabilities, you can enter your SQL injection directly here...</p>
@@ -19,7 +28,7 @@
                     <input type="password" id="password" placeholder="Password" />
                 </div>
                 <div style="margin-top: 1vw;">
-                    <textarea id="sql-statement" style="width: 100%; resize: vertical;" placeholder="sql statement"></textarea>
+                    <textarea id="sql-statement" style="width: 100%; resize: vertical;" placeholder="SQL Statement"></textarea>
                 </div>
                 <div style="margin-top: 1vw;">
                     <button type="button" onclick="executeSQL()">Execute SQL Statement</button>

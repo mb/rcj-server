@@ -121,8 +121,45 @@ def sql():
         return jsonify({'error': 'Forbidden'}), 403
 
     sql_statement = req['sqlStatement']
-    result = g.rcj.execute_sql_statement(sql_statement)
+    if (sql_statement.strip().lower() == "schema"):
+        result = [{'statement': 'schema',
+                    'result': [],
+                    'description': []}]
+        tables = g.rcj.db._query_db("select name, sql from sqlite_master where type = 'table';")
+        for table in tables:
+            # split sql-create-statement into lines
+            temp = table['sql'].split("\n")
+            # remove comments
+            temp = [line.split("--")[0] for line in temp]
+            # join back to one line
+            temp = " ".join(temp)
+            # remove beginning of statement
+            temp = temp.split("CREATE TABLE "+table['name']+"(")[1].strip()
+            # remove bracket content (especially the commas inside would cause trouble)
+            op, temp2 = 0, ""
+            for letter in temp:
+                if (letter == "("): op += 1
+                if (op == 0): temp2 += letter
+                if (letter == ")"): op -= 1
+            # split at commas
+            temp = [el.strip() for el in temp2.split(",")]
+            # remove other instructions from create-statement like keys and constraints
+            sql_keywords = ["PRIMARY KEY", "FOREIGN KEY", "REFERENCES", "CONSTRAINT"]
+            temp2 = []
+            for el in temp:
+                for sql_keyword in sql_keywords:
+                    if (el.lower().startswith(sql_keyword.lower())):
+                        break
+                else: # else of for gets executed when finished normally (w/o break)
+                    temp2.append(el)
+            # use only first word as column name and second word as type
+            column_names_w_type = [" ".join(el.split()[:2]) for el in temp2]
+            # add table name
+            names = [table['name']] + column_names_w_type
+            result[0]['result'].append(names)
+            result[0]['description'] = [""]*max(len(result[0]['description']),len(names))
+    else:
+        result = g.rcj.execute_sql_statement(sql_statement)
 
     # logging?
-    # provide schema?
     return jsonify(result)

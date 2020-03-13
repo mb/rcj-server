@@ -15,6 +15,8 @@ window.onload = function () {
             });
         })(elementId);
     }
+
+    showSchema();
 };
 
 function executeSQL () {
@@ -96,6 +98,48 @@ function executeSQL () {
     .catch(error => {
         console.log(error);
         boxOutput.innerText = "Error: " + error;
+    });
+};
+
+function showSchema () {
+    let boxOutput = document.getElementById("schema");
+    let sqlBody = {
+        referee: {
+            name: document.getElementById("username").value,
+            auth: document.getElementById("password").value,
+        },
+        sqlStatement: "schema",
+    };
+    fetch("/api/v2/sql", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(sqlBody)
+    })
+    .then(response => response.json())
+    .then(json => {
+        boxOutput.innerHTML = "";
+        let p, span, txt;
+        for (let table of json[0].result) {
+            p = document.createElement("p");
+
+            for (let i=0; i<table.length; i++) {
+                span = document.createElement("span");
+                txt = table[i].split(" ")[0]
+                txt+= (i === 0 ? ": " : (i !== table.length-1 ? ", " : ""));
+                span.appendChild(document.createTextNode(txt));
+                if (i === 0) { span.style.fontWeight = "bold"; }
+                else { span.title = table[i].split(" ")[1]; }
+                p.appendChild(span);
+            }
+
+            boxOutput.appendChild(p);
+        }
+    })
+    .catch(error => {
+        console.log(error);
+        boxOutput.innerHTML = '<button type="button" onclick="showSchema()">Show Schema</button>';
     });
 };
 

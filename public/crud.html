@@ -15,6 +15,9 @@
                 padding: 0.1em 0.5em;
                 border: 1px solid #ccc;
             }
+            form div {
+                margin-top: 1vw;
+            }
         </style>
     </head>
 
@@ -23,17 +26,19 @@
             <form>
                 <h1>rcj-server - CRUD</h1>
                 <p>Instead of searching for vulnerabilities, you can enter your SQL injection directly here...</p>
-                <div style="margin-top: 1vw;">
+                <div>
                     <input type="text" id="username" placeholder="Username" />
                     <input type="password" id="password" placeholder="Password" />
                 </div>
-                <div style="margin-top: 1vw;">
+                <div id="schema">
+                </div>
+                <div>
                     <textarea id="sql-statement" style="width: 100%; resize: vertical;" placeholder="SQL Statement"></textarea>
                 </div>
-                <div style="margin-top: 1vw;">
+                <div>
                     <button type="button" onclick="executeSQL()">Execute SQL Statement</button>
                 </div>
-                <div id="box-output" style="margin-top: 1vw;">
+                <div id="box-output">
                     You will see the result of your SQL statement here
                 </div>
             </form>

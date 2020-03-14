@@ -66,10 +66,7 @@ def submit_run():
     # check for valid json
     if not request.is_json:
         return 'not json', 400
-    try:
-        run = request.json
-    except ValueError as e:
-        return str(e), 400
+    run = request.json
 
     # add username and self computed scoring to dictionary
     run['referee'] = auth.username()
@@ -95,9 +92,12 @@ def get_runs_competition(competition):
     return jsonify({'runs': g.rcj.get_runs_competition(competition)})
 
 def api_v2_check_auth(request):
-    username = request['referee']['name']
-    password = request['referee']['auth']
-    return g.rcj.check_referee_password(username, password)
+    if 'referee' in request:
+        if 'name' in request['referee'] and 'auth' in request['referee']:
+            username = request['referee']['name']
+            password = request['referee']['auth']
+            return g.rcj.check_referee_password(username, password)
+    return False
 
 @app.route('/crud', methods=['GET'])
 def crud():
@@ -110,18 +110,15 @@ def crud_main_js():
 def sql():
     if not request.is_json:
         return jsonify({'error': 'not json'}), 400
-    try:
-        req = request.json
-    except ValueError as e:
-        return jsonify({'error': str(e)}), 400
+    req = request.json
 
-    if(not api_v2_check_auth(req)):
+    if not api_v2_check_auth(req):
         return jsonify({'error': 'Unauthorized'}), 401
-    if(req['referee']['name'] not in ["niko", "manuel"]):
+    if req['referee']['name'] not in ["niko", "manuel"]:
         return jsonify({'error': 'Forbidden'}), 403
 
     sql_statement = req['sqlStatement']
-    if (sql_statement.strip().lower() == "schema"):
+    if sql_statement.strip().lower() == "schema":
         result = [{'statement': 'schema',
                     'result': [],
                     'description': []}]
@@ -148,7 +145,7 @@ def sql():
             temp2 = []
             for el in temp:
                 for sql_keyword in sql_keywords:
-                    if (el.lower().startswith(sql_keyword.lower())):
+                    if el.lower().startswith(sql_keyword.lower()):
                         break
                 else: # else of for gets executed when finished normally (w/o break)
                     temp2.append(el)

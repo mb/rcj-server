@@ -70,3 +70,16 @@ Content-Length: 370
 ```
 See https://github.com/rcjberlin/rcj-dss#evaluation for more details.
 
+## API v2
+Each POST request needs to have the object referee with name and auth (when authentication is required).
+```
+{
+    referee: {
+        name: "NL",
+        auth: "wbSwFU6tY1c"
+    },
+    ...
+}
+```
+
+The response is always a JSON.

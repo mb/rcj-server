@@ -160,3 +160,14 @@ def sql():
 
     # logging?
     return jsonify(result)
+
+@app.route('/schedule/runs', methods=['GET'])
+def get_scheduled_runs():
+    return send_from_directory('../schedule', 'scheduled-runs.json')
+
+@app.route('/schedule', methods=['GET'])
+def schedule():
+    return send_from_directory('../schedule', 'index.html')
+@app.route('/schedule/main.js', methods=['GET'])
+def schedule_main_js():
+    return send_from_directory('../schedule', 'main.js')

@@ -1,0 +1,38 @@
+[
+    {
+        "mapId": "rl1",
+        "name": "RL Sa 1",
+        "competition": "line",
+        "details": {}
+    },
+    {
+        "mapId": "rl2",
+        "name": "RL Sa 2",
+        "competition": "line",
+        "details": {}
+    },
+    {
+        "mapId": "rl3",
+        "name": "RL Su",
+        "competition": "line",
+        "details": {}
+    },
+    {
+        "mapId": "rle1",
+        "name": "RLE Sa 1",
+        "competition": "line-entry",
+        "details": {}
+    },
+    {
+        "mapId": "rle2",
+        "name": "RLE Sa 2",
+        "competition": "line-entry",
+        "details": {}
+    },
+    {
+        "mapId": "rle3",
+        "name": "RLE Su",
+        "competition": "line-entry",
+        "details": {}
+    }
+]

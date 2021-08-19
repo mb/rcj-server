@@ -160,3 +160,20 @@ def sql():
 
     # logging?
     return jsonify(result)
+
+@app.route('/schedule/runs', methods=['GET'])
+def get_scheduled_runs():
+    return send_from_directory('../schedule', 'scheduled-runs.json')
+@app.route('/schedule/json/<string:filename>', methods=['GET'])
+def get_schedule_json_file(filename):
+    if (filename in ["teams.json", "events.json", "competitions.json", "arenas.json", "scheduled-runs.json"]):
+        return send_from_directory('../schedule', filename)
+    # TODO: maps need to be filtered based on runs/dates (so that nothing is revealed too early)
+    return "Not Found", 404
+
+@app.route('/schedule', methods=['GET'])
+def schedule():
+    return send_from_directory('../schedule', 'index.html')
+@app.route('/schedule/main.js', methods=['GET'])
+def schedule_main_js():
+    return send_from_directory('../schedule', 'main.js')

@@ -89,6 +89,12 @@ class Rcj:
         if wrong_type != []:
             raise ValueError("Attributes with wrong type:\n{}".format("\n".join(wrong_type)))
 
+        if "only_testing" in run and run["only_testing"] == True:
+            # don't store run in db if it's just used for testing or demonstration purposes
+            # however, write log in case the flag was just set by accident
+            self._log_run(run, "only_testing")
+            return
+
         # TODO: compare with previos result + result from rcj-dss
         run['score'] = self.calculate_score(run['scoring'])
         # check if the run is already stored

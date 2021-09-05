@@ -1,0 +1,272 @@
+[
+    {
+        "teamId": "RL 1",
+        "name": "RL 1",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 2",
+        "name": "RL 2",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 3",
+        "name": "RL 3",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 4",
+        "name": "RL 4",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 5",
+        "name": "RL 5",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 6",
+        "name": "RL 6",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 7",
+        "name": "RL 7",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 8",
+        "name": "RL 8",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 9",
+        "name": "RL 9",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 10",
+        "name": "RL 10",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 11",
+        "name": "RL 11",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 12",
+        "name": "RL 12",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 13",
+        "name": "RL 13",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 14",
+        "name": "RL 14",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 15",
+        "name": "RL 15",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 16",
+        "name": "RL 16",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 17",
+        "name": "RL 17",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 18",
+        "name": "RL 18",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 19",
+        "name": "RL 19",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 20",
+        "name": "RL 20",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 21",
+        "name": "RL 21",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 22",
+        "name": "RL 22",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 23",
+        "name": "RL 23",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 24",
+        "name": "RL 24",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 25",
+        "name": "RL 25",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 26",
+        "name": "RL 26",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 27",
+        "name": "RL 27",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 28",
+        "name": "RL 28",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 29",
+        "name": "RL 29",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 30",
+        "name": "RL 30",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 31",
+        "name": "RL 31",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 32",
+        "name": "RL 32",
+        "competition": "line"
+    },
+    {
+        "teamId": "RLE 1",
+        "name": "RLE 1",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 2",
+        "name": "RLE 2",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 3",
+        "name": "RLE 3",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 4",
+        "name": "RLE 4",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 5",
+        "name": "RLE 5",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 6",
+        "name": "RLE 6",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 7",
+        "name": "RLE 7",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 8",
+        "name": "RLE 8",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 9",
+        "name": "RLE 9",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 10",
+        "name": "RLE 10",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 11",
+        "name": "RLE 11",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 12",
+        "name": "RLE 12",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 13",
+        "name": "RLE 13",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 14",
+        "name": "RLE 14",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 15",
+        "name": "RLE 15",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 16",
+        "name": "RLE 16",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 17",
+        "name": "RLE 17",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 18",
+        "name": "RLE 18",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 19",
+        "name": "RLE 19",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 20",
+        "name": "RLE 20",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 21",
+        "name": "RLE 21",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 22",
+        "name": "RLE 22",
+        "competition": "line-entry"
+    }
+]

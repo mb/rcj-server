@@ -54,7 +54,7 @@ Content-Length: 370
     },
     competition: "2020-berlin-line",
     arena: "Arena A",
-    round: "2",
+    round: 2,
     teamname: "pi++",
     time_duration: 57,
     time_start: 1554854400,
@@ -83,3 +83,4 @@ Each POST request needs to have the object referee with name and auth (when auth
 ```
 
 The response is always a JSON.
+

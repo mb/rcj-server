@@ -4,6 +4,7 @@ from db import RcjDb
 from werkzeug.security import generate_password_hash, check_password_hash
 import json
 import datetime
+from send_event import eventsHelper, EVENT_RUN_FINISHED
 
 class Rcj:
     def __init__(self, database="rcj_database.sqlite"):
@@ -108,6 +109,14 @@ class Rcj:
         self._log_run(run, "ok")
 
         self.db.store_run(run)
+        eventsHelper.send_event(EVENT_RUN_FINISHED, {
+            "run": {
+                "competition": run["competition"],
+                "teamname": run["teamname"],
+                "round": run["round"],
+                "arenaId": run["arena"],
+            }
+        })
 
     def dump_runs(self):
         runs = self.db.dump_runs()

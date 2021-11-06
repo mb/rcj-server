@@ -15,7 +15,7 @@ git clone https://github.com/mb/rcj-server
 cd rcj-server
 python3 -m venv venv
 . venv/bin/activate
-pip install Flask Flask-HTTPAuth fire flask-cors
+pip install Flask Flask-HTTPAuth fire flask-cors requests
 ```
 
 Running the development version:
@@ -31,6 +31,16 @@ Example `rcj_config.ini`
 ```ini
 [db]
 filename = "rcj_database.sqlite"
+```
+
+Example `events.ini`
+
+```ini
+[events]
+auth_token = token-to-authenticate-requests-from-rcj-server
+run-started--1 = http://localhost:1338/v1/event
+run-finished--1 = http://localhost:1338/v1/event
+run-finished--2 = http://localhost:1339/run-finished
 ```
 
 ## Run

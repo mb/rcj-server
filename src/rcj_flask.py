@@ -1,6 +1,7 @@
 from flask import Flask, request, Response, send_from_directory
 from flask import g # global variables
 from rcj import Rcj
+from send_event import eventsHelper, EVENT_RUN_STARTED
 from flask_httpauth import HTTPBasicAuth
 from flask import jsonify
 import json
@@ -177,3 +178,14 @@ def schedule():
 @app.route('/schedule/main.js', methods=['GET'])
 def schedule_main_js():
     return send_from_directory('../schedule', 'main.js')
+
+@app.route('/api/v1/run_started', methods=['POST'])
+@auth.login_required
+def run_started():
+    # check for valid json
+    if not request.is_json:
+        return 'not json', 400
+    run = request.json
+
+    eventsHelper.send_event(EVENT_RUN_STARTED, run)
+    return 'ok', 200

@@ -1,0 +1,1460 @@
+[
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 1",
+        "time": "2022-04-01T11:50:00+02",
+        "arenaId": "A",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 1
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 1",
+        "time": "2022-04-01T15:00:00+02",
+        "arenaId": "B",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 2
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 12",
+        "time": "2022-04-01T11:50:00+02",
+        "arenaId": "B",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 3
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 12",
+        "time": "2022-04-01T15:00:00+02",
+        "arenaId": "A",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 4
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 2",
+        "time": "2022-04-01T12:00:00+02",
+        "arenaId": "A",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 5
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 2",
+        "time": "2022-04-01T15:10:00+02",
+        "arenaId": "B",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 6
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 13",
+        "time": "2022-04-01T12:00:00+02",
+        "arenaId": "B",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 7
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 13",
+        "time": "2022-04-01T15:10:00+02",
+        "arenaId": "A",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 8
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 3",
+        "time": "2022-04-01T12:10:00+02",
+        "arenaId": "A",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 9
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 3",
+        "time": "2022-04-01T15:20:00+02",
+        "arenaId": "B",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 10
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 14",
+        "time": "2022-04-01T12:10:00+02",
+        "arenaId": "B",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 11
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 14",
+        "time": "2022-04-01T15:20:00+02",
+        "arenaId": "A",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 12
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 4",
+        "time": "2022-04-01T12:20:00+02",
+        "arenaId": "A",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 13
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 4",
+        "time": "2022-04-01T15:30:00+02",
+        "arenaId": "B",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 14
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 15",
+        "time": "2022-04-01T12:20:00+02",
+        "arenaId": "B",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 15
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 15",
+        "time": "2022-04-01T15:30:00+02",
+        "arenaId": "A",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 16
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 5",
+        "time": "2022-04-01T12:30:00+02",
+        "arenaId": "A",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 17
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 5",
+        "time": "2022-04-01T15:40:00+02",
+        "arenaId": "B",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 18
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 16",
+        "time": "2022-04-01T12:30:00+02",
+        "arenaId": "B",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 19
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 16",
+        "time": "2022-04-01T15:40:00+02",
+        "arenaId": "A",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 20
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 6",
+        "time": "2022-04-01T12:40:00+02",
+        "arenaId": "A",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 21
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 6",
+        "time": "2022-04-01T15:50:00+02",
+        "arenaId": "B",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 22
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 17",
+        "time": "2022-04-01T12:40:00+02",
+        "arenaId": "B",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 23
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 17",
+        "time": "2022-04-01T15:50:00+02",
+        "arenaId": "A",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 24
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 7",
+        "time": "2022-04-01T12:50:00+02",
+        "arenaId": "A",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 25
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 7",
+        "time": "2022-04-01T16:00:00+02",
+        "arenaId": "B",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 26
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 18",
+        "time": "2022-04-01T12:50:00+02",
+        "arenaId": "B",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 27
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 18",
+        "time": "2022-04-01T16:00:00+02",
+        "arenaId": "A",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 28
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 8",
+        "time": "2022-04-01T13:00:00+02",
+        "arenaId": "A",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 29
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 8",
+        "time": "2022-04-01T16:10:00+02",
+        "arenaId": "B",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 30
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 19",
+        "time": "2022-04-01T13:00:00+02",
+        "arenaId": "B",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 31
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 19",
+        "time": "2022-04-01T16:10:00+02",
+        "arenaId": "A",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 32
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 9",
+        "time": "2022-04-01T13:10:00+02",
+        "arenaId": "A",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 33
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 9",
+        "time": "2022-04-01T16:20:00+02",
+        "arenaId": "B",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 34
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 20",
+        "time": "2022-04-01T13:10:00+02",
+        "arenaId": "B",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 35
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 20",
+        "time": "2022-04-01T16:20:00+02",
+        "arenaId": "A",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 36
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 10",
+        "time": "2022-04-01T13:20:00+02",
+        "arenaId": "A",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 37
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 10",
+        "time": "2022-04-01T16:30:00+02",
+        "arenaId": "B",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 38
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 21",
+        "time": "2022-04-01T13:20:00+02",
+        "arenaId": "B",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 39
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 21",
+        "time": "2022-04-01T16:30:00+02",
+        "arenaId": "A",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 40
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 11",
+        "time": "2022-04-01T13:30:00+02",
+        "arenaId": "A",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 41
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 11",
+        "time": "2022-04-01T16:40:00+02",
+        "arenaId": "B",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 42
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 22",
+        "time": "2022-04-01T13:30:00+02",
+        "arenaId": "B",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 43
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 22",
+        "time": "2022-04-01T16:40:00+02",
+        "arenaId": "A",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 44
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 1",
+        "time": "2022-04-01T11:30:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 45
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 1",
+        "time": "2022-04-01T14:30:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 46
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 17",
+        "time": "2022-04-01T11:30:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 47
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 17",
+        "time": "2022-04-01T14:30:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 48
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 2",
+        "time": "2022-04-01T11:40:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 49
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 2",
+        "time": "2022-04-01T14:40:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 50
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 18",
+        "time": "2022-04-01T11:40:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 51
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 18",
+        "time": "2022-04-01T14:40:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 52
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 3",
+        "time": "2022-04-01T11:50:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 53
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 3",
+        "time": "2022-04-01T14:50:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 54
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 19",
+        "time": "2022-04-01T11:50:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 55
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 19",
+        "time": "2022-04-01T14:50:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 56
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 4",
+        "time": "2022-04-01T12:00:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 57
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 4",
+        "time": "2022-04-01T15:00:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 58
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 20",
+        "time": "2022-04-01T12:00:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 59
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 20",
+        "time": "2022-04-01T15:00:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 60
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 5",
+        "time": "2022-04-01T12:10:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 61
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 5",
+        "time": "2022-04-01T15:10:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 62
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 21",
+        "time": "2022-04-01T12:10:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 63
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 21",
+        "time": "2022-04-01T15:10:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 64
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 6",
+        "time": "2022-04-01T12:20:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 65
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 6",
+        "time": "2022-04-01T15:20:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 66
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 22",
+        "time": "2022-04-01T12:20:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 67
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 22",
+        "time": "2022-04-01T15:20:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 68
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 7",
+        "time": "2022-04-01T12:30:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 69
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 7",
+        "time": "2022-04-01T15:30:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 70
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 23",
+        "time": "2022-04-01T12:30:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 71
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 23",
+        "time": "2022-04-01T15:30:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 72
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 8",
+        "time": "2022-04-01T12:40:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 73
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 8",
+        "time": "2022-04-01T15:40:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 74
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 24",
+        "time": "2022-04-01T12:40:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 75
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 24",
+        "time": "2022-04-01T15:40:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 76
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 9",
+        "time": "2022-04-01T12:50:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 77
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 9",
+        "time": "2022-04-01T15:50:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 78
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 25",
+        "time": "2022-04-01T12:50:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 79
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 25",
+        "time": "2022-04-01T15:50:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 80
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 10",
+        "time": "2022-04-01T13:00:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 81
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 10",
+        "time": "2022-04-01T16:00:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 82
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 26",
+        "time": "2022-04-01T13:00:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 83
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 26",
+        "time": "2022-04-01T16:00:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 84
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 11",
+        "time": "2022-04-01T13:10:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 85
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 11",
+        "time": "2022-04-01T16:10:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 86
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 27",
+        "time": "2022-04-01T13:10:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 87
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 27",
+        "time": "2022-04-01T16:10:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 88
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 12",
+        "time": "2022-04-01T13:20:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 89
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 12",
+        "time": "2022-04-01T16:20:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 90
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 28",
+        "time": "2022-04-01T13:20:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 91
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 28",
+        "time": "2022-04-01T16:20:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 92
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 13",
+        "time": "2022-04-01T13:30:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 93
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 13",
+        "time": "2022-04-01T16:30:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 94
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 29",
+        "time": "2022-04-01T13:30:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 95
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 29",
+        "time": "2022-04-01T16:30:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 96
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 14",
+        "time": "2022-04-01T13:40:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 97
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 14",
+        "time": "2022-04-01T16:40:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 98
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 30",
+        "time": "2022-04-01T13:40:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 99
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 30",
+        "time": "2022-04-01T16:40:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 100
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 15",
+        "time": "2022-04-01T13:50:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 101
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 15",
+        "time": "2022-04-01T16:50:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 102
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 31",
+        "time": "2022-04-01T13:50:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 103
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 31",
+        "time": "2022-04-01T16:50:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 104
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 16",
+        "time": "2022-04-01T14:00:00+02",
+        "arenaId": "C",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 105
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 16",
+        "time": "2022-04-01T17:00:00+02",
+        "arenaId": "D",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 106
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 32",
+        "time": "2022-04-01T14:00:00+02",
+        "arenaId": "D",
+        "round": 1,
+        "event": "2022-berlin",
+        "runId": 107
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 32",
+        "time": "2022-04-01T17:00:00+02",
+        "arenaId": "C",
+        "round": 2,
+        "event": "2022-berlin",
+        "runId": 108
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 1",
+        "time": "2022-04-02T12:30:00+02",
+        "arenaId": "A",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 109
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 12",
+        "time": "2022-04-02T12:30:00+02",
+        "arenaId": "B",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 110
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 2",
+        "time": "2022-04-02T12:20:00+02",
+        "arenaId": "A",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 111
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 13",
+        "time": "2022-04-02T12:20:00+02",
+        "arenaId": "B",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 112
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 3",
+        "time": "2022-04-02T12:10:00+02",
+        "arenaId": "A",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 113
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 14",
+        "time": "2022-04-02T12:10:00+02",
+        "arenaId": "B",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 114
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 4",
+        "time": "2022-04-02T12:00:00+02",
+        "arenaId": "A",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 115
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 15",
+        "time": "2022-04-02T12:00:00+02",
+        "arenaId": "B",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 116
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 5",
+        "time": "2022-04-02T11:50:00+02",
+        "arenaId": "A",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 117
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 16",
+        "time": "2022-04-02T11:50:00+02",
+        "arenaId": "B",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 118
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 6",
+        "time": "2022-04-02T11:40:00+02",
+        "arenaId": "A",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 119
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 17",
+        "time": "2022-04-02T11:40:00+02",
+        "arenaId": "B",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 120
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 7",
+        "time": "2022-04-02T11:30:00+02",
+        "arenaId": "A",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 121
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 18",
+        "time": "2022-04-02T11:30:00+02",
+        "arenaId": "B",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 122
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 8",
+        "time": "2022-04-02T11:20:00+02",
+        "arenaId": "A",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 123
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 19",
+        "time": "2022-04-02T11:20:00+02",
+        "arenaId": "B",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 124
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 9",
+        "time": "2022-04-02T11:10:00+02",
+        "arenaId": "A",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 125
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 20",
+        "time": "2022-04-02T11:10:00+02",
+        "arenaId": "B",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 126
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 10",
+        "time": "2022-04-02T11:00:00+02",
+        "arenaId": "A",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 127
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 21",
+        "time": "2022-04-02T11:00:00+02",
+        "arenaId": "B",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 128
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 11",
+        "time": "2022-04-02T10:50:00+02",
+        "arenaId": "A",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 129
+    },
+    {
+        "competition": "line-entry",
+        "teamId": "RLE 22",
+        "time": "2022-04-02T10:50:00+02",
+        "arenaId": "B",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 130
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 1",
+        "time": "2022-04-02T13:00:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 131
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 17",
+        "time": "2022-04-02T13:00:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 132
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 2",
+        "time": "2022-04-02T12:50:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 133
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 18",
+        "time": "2022-04-02T12:50:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 134
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 3",
+        "time": "2022-04-02T12:40:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 135
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 19",
+        "time": "2022-04-02T12:40:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 136
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 4",
+        "time": "2022-04-02T12:30:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 137
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 20",
+        "time": "2022-04-02T12:30:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 138
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 5",
+        "time": "2022-04-02T12:20:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 139
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 21",
+        "time": "2022-04-02T12:20:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 140
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 6",
+        "time": "2022-04-02T12:10:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 141
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 22",
+        "time": "2022-04-02T12:10:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 142
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 7",
+        "time": "2022-04-02T12:00:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 143
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 23",
+        "time": "2022-04-02T12:00:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 144
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 8",
+        "time": "2022-04-02T11:50:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 145
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 24",
+        "time": "2022-04-02T11:50:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 146
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 9",
+        "time": "2022-04-02T11:40:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 147
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 25",
+        "time": "2022-04-02T11:40:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 148
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 10",
+        "time": "2022-04-02T11:30:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 149
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 26",
+        "time": "2022-04-02T11:30:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 150
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 11",
+        "time": "2022-04-02T11:20:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 151
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 27",
+        "time": "2022-04-02T11:20:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 152
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 12",
+        "time": "2022-04-02T11:10:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 153
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 28",
+        "time": "2022-04-02T11:10:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 154
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 13",
+        "time": "2022-04-02T11:00:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 155
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 29",
+        "time": "2022-04-02T11:00:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 156
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 14",
+        "time": "2022-04-02T10:50:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 157
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 30",
+        "time": "2022-04-02T10:50:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 158
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 15",
+        "time": "2022-04-02T10:40:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 159
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 31",
+        "time": "2022-04-02T10:40:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 160
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 16",
+        "time": "2022-04-02T10:30:00+02",
+        "arenaId": "C",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 161
+    },
+    {
+        "competition": "line",
+        "teamId": "RL 32",
+        "time": "2022-04-02T10:30:00+02",
+        "arenaId": "D",
+        "round": 3,
+        "event": "2022-berlin",
+        "runId": 162
+    }
+]

@@ -6,3 +6,5 @@ rcj_database.sqlite
 *.db
 *.sqlite
 *.log
+
+events.ini

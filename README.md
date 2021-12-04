@@ -36,11 +36,13 @@ filename = "rcj_database.sqlite"
 Example `events.ini`
 
 ```ini
+[auth]
+token = token-authorizing-rcjserver-123456
+
 [events]
-auth_token = token-to-authenticate-requests-from-rcj-server
 run-started--1 = http://localhost:1338/v1/event
 run-finished--1 = http://localhost:1338/v1/event
-run-finished--2 = http://localhost:1339/run-finished
+run-finished--2 = http://localhost:5001/calc
 ```
 
 ## Run

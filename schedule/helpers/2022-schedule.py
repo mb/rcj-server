@@ -50,4 +50,11 @@ for competition in COMPETITIONS:
             break_id += 1
             next_break = to_dt(*([COMPETITION_DAY, BREAKS[break_id][0]] if break_id < len(BREAKS) else ["9999-12-31", "23.59"]))
 
+# add event and runId for all scheduled runs
+run_id = 0
+for scheduled_run in schedule:
+    run_id += 1
+    scheduled_run["event"] = EVENT
+    scheduled_run["runId"] = run_id
+
 write_data_to_json(schedule, "scheduled-runs.json")

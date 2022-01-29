@@ -5,6 +5,46 @@
         "competition": "line"
     },
     {
+        "teamId": "RL 2",
+        "name": "athe1",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 3",
+        "name": "athe2",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 4",
+        "name": "athe3",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 5",
+        "name": "Deutsch-Russisches B\u00fcndnis",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 6",
+        "name": "Die Affen",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 7",
+        "name": "GHG_LINE",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 8",
+        "name": "NIEMAND",
+        "competition": "line"
+    },
+    {
+        "teamId": "RL 9",
+        "name": "p'tats",
+        "competition": "line"
+    },
+    {
         "teamId": "RL 10",
         "name": "Pegasus",
         "competition": "line"
@@ -35,93 +75,8 @@
         "competition": "line"
     },
     {
-        "teamId": "RL 2",
-        "name": "athe1",
-        "competition": "line"
-    },
-    {
-        "teamId": "RL 3",
-        "name": "athe2",
-        "competition": "line"
-    },
-    {
-        "teamId": "RL 4",
-        "name": "athe3",
-        "competition": "line"
-    },
-    {
-        "teamId": "RL 5",
-        "name": "Deutsch-Russisches B\u00fcndnis",
-        "competition": "line"
-    },
-    {
-        "teamId": "RL 6 ",
-        "name": "Die Affen",
-        "competition": "line"
-    },
-    {
-        "teamId": "RL 7",
-        "name": "GHG_LINE",
-        "competition": "line"
-    },
-    {
-        "teamId": "RL 8",
-        "name": "NIEMAND",
-        "competition": "line"
-    },
-    {
-        "teamId": "RL 9",
-        "name": "p'tats",
-        "competition": "line"
-    },
-    {
-        "teamId": "RLE 4",
-        "name": "HMS Rescue",
-        "competition": "line-entry"
-    },
-    {
-        "teamId": "RLE 3",
-        "name": "EV12",
-        "competition": "line-entry"
-    },
-    {
-        "teamId": "RLE 10",
-        "name": "robinator",
-        "competition": "line-entry"
-    },
-    {
-        "teamId": "RLE 13",
-        "name": "Sedai Robo",
-        "competition": "line-entry"
-    },
-    {
-        "teamId": "RLE 14",
-        "name": "Slimeys",
-        "competition": "line-entry"
-    },
-    {
-        "teamId": "RLE 16",
-        "name": "the endgamer",
-        "competition": "line-entry"
-    },
-    {
-        "teamId": "RLE 7",
-        "name": "minions",
-        "competition": "line-entry"
-    },
-    {
-        "teamId": "RLE 8",
-        "name": "NinaUndGreta",
-        "competition": "line-entry"
-    },
-    {
-        "teamId": "RLE 11",
-        "name": "Robotics Squad",
-        "competition": "line-entry"
-    },
-    {
-        "teamId": "RLE 15",
-        "name": "Team4",
+        "teamId": "RLE 1",
+        "name": "Alpha Team",
         "competition": "line-entry"
     },
     {
@@ -130,13 +85,13 @@
         "competition": "line-entry"
     },
     {
-        "teamId": "RLE 9",
-        "name": "OhmBot-Bienen",
+        "teamId": "RLE 3",
+        "name": "EV12",
         "competition": "line-entry"
     },
     {
-        "teamId": "RLE 1",
-        "name": "Alpha Team",
+        "teamId": "RLE 4",
+        "name": "HMS Rescue",
         "competition": "line-entry"
     },
     {
@@ -150,8 +105,53 @@
         "competition": "line-entry"
     },
     {
+        "teamId": "RLE 7",
+        "name": "minions",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 8",
+        "name": "NinaUndGreta",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 9",
+        "name": "OhmBot-Bienen",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 10",
+        "name": "robinator",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 11",
+        "name": "Robotics Squad",
+        "competition": "line-entry"
+    },
+    {
         "teamId": "RLE 12",
         "name": "Scorpion",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 13",
+        "name": "Sedai Robo",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 14",
+        "name": "Slimeys",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 15",
+        "name": "Team4",
+        "competition": "line-entry"
+    },
+    {
+        "teamId": "RLE 16",
+        "name": "the endgamer",
         "competition": "line-entry"
     }
 ]
